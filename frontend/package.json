@@ -1,0 +1,73 @@
+{
+  "name": "physio-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.4.3",
+    "@headlessui/react": "^1.6.3",
+    "@heroicons/react": "^1.0.6",
+    "@react-pdf/renderer": "^2.2.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "assert": "^2.0.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "process": "^0.11.10",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "6",
+    "react-scripts": "5.0.1",
+    "recharts": "^2.1.11",
+    "stream-browserify": "^3.0.0",
+    "typescript": "^4.4.2",
+    "util": "^0.12.4",
+    "web-vitals": "^2.1.0",
+    "webpack-bundle-analyzer": "^4.5.0"
+  },
+  "scripts": {
+    "start": "ESLINT_NO_DEV_ERRORS='true' craco start",
+    "build": "DISABLE_ESLINT_PLUGIN='true' craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "analyze": "node ./analyze.js",
+    "lint": "eslint --fix --ignore-path .eslintignore --ext .ts,.tsx,.jsx,.js ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24"
+  }
+}

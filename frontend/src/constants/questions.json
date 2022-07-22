@@ -1,0 +1,832 @@
+{
+  "questions": {
+    "Brief Illness Perceptions Survey": [
+      {
+        "type": "range",
+        "title": "1. To what degree has your injury had a negative effect on your life?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No effect at all",
+        "maximumText": "Severly affects my life"
+      },
+      {
+        "type": "range",
+        "title": "2. How long do you think your symptoms will continue?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "A very short time",
+        "maximumText": "Forever"
+      },
+      {
+        "type": "range",
+        "title": "3. How much control do you feel you have over your symptoms?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Absolutely no control",
+        "maximumText": "Complete control"
+      },
+      {
+        "type": "range",
+        "title": "4. How much do you think your treament will help your symptoms? This includes medication, physical therapy or other treatments:",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Not at all",
+        "maximumText": "Extremely helpful"
+      },
+      {
+        "type": "range",
+        "title": "5. Thinking of all the symptoms that have arisen as a result of your injury, are you experiencing:",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No symptoms at all",
+        "maximumText": "Many different symptoms"
+      },
+      {
+        "type": "range",
+        "title": "6. How severe are the symptoms that you're experiencing as a result of your injury?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No symptoms at all",
+        "maximumText": "Extremely severe symptoms"
+      },
+      {
+        "type": "range",
+        "title": "7. How concerned are you about your symptoms?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Not concerned at all",
+        "maximumText": "Extremely concerned"
+      },
+      {
+        "type": "range",
+        "title": "8. How well do you feel you understand your symptoms?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Don't understand at all",
+        "maximumText": "Understand very clearly"
+      },
+      {
+        "type": "range",
+        "title": "9. How easily do you feel it would be to injure yourself further?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No more easily than normal",
+        "maximumText": "I could very easily be injured further"
+      },
+      {
+        "type": "range",
+        "title": "10. How much has your injury affected you emotionally? (ie. do they make you angry, scared, upset or depressed?):",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Not at all affected emotionally",
+        "maximumText": "Very affected emotionally"
+      },
+      {
+        "type": "text-input-multiple",
+        "title": "Please list in rank-order the three most important factors that you believed caused your illness:",
+        "number": 3
+      }
+    ],
+    "Brief Pain Inventory": [
+      {
+        "type": "range",
+        "title": "1. Please rate your pain by selecting the score that best describe your pain at its worst in the past 24 hours:",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No pain",
+        "maximumText": "Extreme pain"
+      },
+      {
+        "type": "range",
+        "title": "2. Please rate your pain by selecting the score that best describes your pain at its least (best) in the last 24 hours:",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No pain",
+        "maximumText": "Extreme pain"
+      },
+      {
+        "type": "range",
+        "title": "3. Please rate your pain by selecting the score that best describes your pain on average:",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No pain",
+        "maximumText": "Extreme pain"
+      },
+      {
+        "type": "range",
+        "title": "4. Please rate your pain by selecting the score that describes how much pain you have right now:",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No pain",
+        "maximumText": "Extreme pain"
+      },
+      {
+        "type": "text",
+        "title": "5. Select the result that best describes how, during the past 24 hours, pain has interfered with your life:",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No symptoms at all",
+        "maximumText": "Many different symptoms"
+      },
+      {
+        "type": "range",
+        "title": "A. General Activity",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Does not interfere",
+        "maximumText": "Completely interferes"
+      },
+      {
+        "type": "range",
+        "title": "B. Mood",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Does not interfere",
+        "maximumText": "Completely interferes"
+      },
+      {
+        "type": "range",
+        "title": "C. Walking ability",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Does not interfere",
+        "maximumText": "Completely interferes"
+      },
+      {
+        "type": "range",
+        "title": "D. Normal Work (includes both work outside the home and housework",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Does not interfere",
+        "maximumText": "Completely interferes"
+      },
+      {
+        "type": "range",
+        "title": "E. Relations with Other People",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Does not interfere",
+        "maximumText": "Completely interferes"
+      },
+      {
+        "type": "range",
+        "title": "F. Sleep",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Does not interfere",
+        "maximumText": "Completely interferes"
+      },
+      {
+        "type": "range",
+        "title": "G. Enjoyment of Life",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "Does not interfere",
+        "maximumText": "Completely interferes"
+      }
+    ],
+    "Central Sensitivity Inventory": [
+      {
+        "type": "tabs",
+        "title": "1. I feel unrefreshed when I wake up in the morning",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "2. My muscles feel stiff and achy",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "3. I have anxiety attacks",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "4. I grind or clench my teeth",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "5. I have problems with diarrhoea and/or constipation",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "6. I need help in performing my daily activities",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "7. I am sensitive to bright lights",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "8. I get tired very easily when I am physically active",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "9. I feel pain all over my body",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "10. I have headaches",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "11. I feel discomfort in my bladder and/or burning when I urinate",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "12. I do not sleep well",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "13. I have difficulty concentrating",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "14. I have skin problems such as dryness, itchiness or rashes",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "15. Stress makes my physical symptoms get worse",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "16. I feel sad or depressed",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "17. I have low energy",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "18. I have muscle tension in my neck and shoulders",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "19. I have pain in my jaw",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "20. Certain smells, such as perfumes, make me feel dizzy and nauseated",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "21. I have to urinate frequently",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "22. My legs feel uncomfortable and restless when I am trying to go to sleep at night",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "23. I have difficulty remembering things",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "24. I suffered trauma as a child",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      },
+      {
+        "type": "tabs",
+        "title": "25. I have pain in my pelvic area",
+        "values": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+      }
+    ],
+    "DN4 Questionnaire": [
+      {
+        "type": "tabs",
+        "title": "1. Burning?",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "tabs",
+        "title": "2. Painful cold?",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "tabs",
+        "title": "3. Electric shocks?",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "tabs",
+        "title": "4. Tingling?",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "tabs",
+        "title": "5. Pins and needles?",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "tabs",
+        "title": "6. Numbness?",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "tabs",
+        "title": "7. Itching?",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "text",
+        "title": "EXAMINATION OF THE PATIENT"
+      },
+      {
+        "type": "tabs",
+        "title": "8. Hypoesthesia to touch",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "tabs",
+        "title": "9. Hypoesthesia to prick",
+        "values": ["No", "Yes"]
+      },
+      {
+        "type": "tabs",
+        "title": "10. Brushing",
+        "values": ["No", "Yes"]
+      }
+    ],
+    "P4 Instrument": [
+      {
+        "type": "range",
+        "title": "1. On average, how bad has your pain been in the morning over the past 2 days?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No pain",
+        "maximumText": "Extreme pain"
+      },
+      {
+        "type": "range",
+        "title": "2. On average, how bad has your pain been in the afternoon over the past 2 days?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No pain",
+        "maximumText": "Extreme pain"
+      },
+      {
+        "type": "range",
+        "title": "3. On average, how bad has your pain been in the evening over the past 2 days?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No pain",
+        "maximumText": "Extreme pain"
+      },
+      {
+        "type": "range",
+        "title": "4. On average, how bad has your pain been with activity over the past 2 days?",
+        "minimum": 0,
+        "maximum": 10,
+        "minimumText": "No pain",
+        "maximumText": "Extreme pain"
+      }
+    ],
+    "Pain Catastrophising Scale": [
+      {
+        "type": "tabs",
+        "title": "1. I worry all the time about whether the pain will end",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "2. I feel I can’t go on",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "3. It’s terrible and I think it’s never going to get any better",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "4. It’s awful and I feel that it overwhelms me",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "5. I feel I can’t stand it anymore",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "6. I become afraid that the pain will get worse",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "7. I keep thinking of other painful events",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "8. I anxiously want the pain to go away",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "9. I can`t seem to keep it out of my mind",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "10. I keep thinking about how much it hurts",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "11. I keep thinking about how badly I want the pain to stop",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "12. There’s nothing I can do to reduce the intensity of the pain",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "13. I wonder whether something serious may happen",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      }
+    ],
+    "Tampa Scale For Kinesophobia": [
+      {
+        "type": "tabs",
+        "title": "1. I worry all the time about whether the pain will end",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "2. I feel I can’t go on",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "3. It’s terrible and I think it’s never going to get any better",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "4. It’s awful and I feel that it overwhelms me",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "5. I feel I can’t stand it anymore",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "6. I become afraid that the pain will get worse",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "7. I keep thinking of other painful events",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "8. I anxiously want the pain to go away",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "9. I can`t seem to keep it out of my mind",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "10. I keep thinking about how much it hurts",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "11. I keep thinking about how badly I want the pain to stop",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "12. There’s nothing I can do to reduce the intensity of the pain",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "13. I wonder whether something serious may happen",
+        "values": [
+          "Not at all",
+          "To a slight degree",
+          "To a moderate degree",
+          "To a great degree",
+          "All the time"
+        ]
+      }
+    ],
+    "Traumatic Injuries Distress Scale": [
+      {
+        "type": "tabs",
+        "title": "1. Difficulty maintaining your concentration",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "2. Difficulty thinking about anything other than the pain",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "3. A feeling of being overwhelmed by pain or other symptoms",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "4. Flashbacks of the accident while you’re awake that feel very real",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "5. Feeling ‘wound up’, agitated or scared when in a place that reminds you of the accident (e.g. In a car, at work or on a slippery surface)",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "6. Frustration at your inability to control your pain",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "7. Loss of motivation to get up and start a new day",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "8. Pain that lasts an entire day without easing",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "9. Loss of interest in your appearance",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "10. Difficulty doing the things that you would normally enjoy",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "11. Feeling 'numb' or disengaged, as if you were watching the world through a window",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      },
+      {
+        "type": "tabs",
+        "title": "12. Anger directed at others",
+        "values": ["Never", "Occasionally", "Often or All of the time"]
+      }
+    ],
+    "Pain Self Efficacy Questionnaire": [
+      {
+        "type": "range",
+        "title": "1. I can enjoy things, despite the pain.",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      },
+      {
+        "type": "range",
+        "title": "2. I can do most of the household chores (e.g. tidying up, washing dishes, etc.), despite the pain.",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      },
+      {
+        "type": "range",
+        "title": "3. I can socialize with my friends or family members as often as I used to, despite the pain.",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      },
+      {
+        "type": "range",
+        "title": "4. I can cope with my pain in most situations.",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      },
+      {
+        "type": "range",
+        "title": "5. I can do some form of work, despite the pain. (Work includes housework, paid and unpaid work.)",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      },
+      {
+        "type": "range",
+        "title": "6. I can still do many of the things I enjoy doing, such as hobbies or leisure activity, despite the pain.",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      },
+      {
+        "type": "range",
+        "title": "7. I can cope with my pain without medication.",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      },
+      {
+        "type": "range",
+        "title": "8. I can still accomplish most of my goals in life, despite the pain.",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      },
+      {
+        "type": "range",
+        "title": "10. I can gradually become more active, despite the pain.",
+        "minimum": 0,
+        "maximum": 6,
+        "minimumText": "Not at all confident",
+        "maximumText": "Completely confident"
+      }
+    ]
+  }
+}
