@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo } from "react";
 
 export const Separator = memo(() => (
   <div className="relative flex w-full items-center py-5 px-4">

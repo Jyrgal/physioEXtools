@@ -1,9 +1,9 @@
-import { Text } from 'components/text';
-import { memo, useEffect, useState } from 'react';
-import { usePDF } from '@react-pdf/renderer';
-import { Download } from 'components/download';
-import { Tabs } from 'components/tabs';
-import { DN4QuestionnaireDocument } from 'components/documents/dn4-questionnaire';
+import { Text } from "components/text";
+import { memo, useEffect, useState } from "react";
+import { usePDF } from "@react-pdf/renderer";
+import { Download } from "components/download";
+import { Tabs } from "components/tabs";
+import { DN4QuestionnaireDocument } from "components/documents/dn4-questionnaire";
 
 export const DN4Questionnaire = memo(() => {
   const [burningValue, setBurningValue] = useState(false);
@@ -52,20 +52,20 @@ export const DN4Questionnaire = memo(() => {
 
   const onClick = (
     value: string,
-    setValue: React.Dispatch<React.SetStateAction<boolean>>,
+    setValue: React.Dispatch<React.SetStateAction<boolean>>
   ) => {
     switch (value) {
-      case 'No':
+      case "No":
         setValue(false);
         break;
-      case 'Yes':
+      case "Yes":
         setValue(true);
         break;
       default:
     }
   };
 
-  const tabValues = ['No', 'Yes'];
+  const tabValues = ["No", "Yes"];
 
   return (
     <div className="flex flex-col">
@@ -148,7 +148,7 @@ export const DN4Questionnaire = memo(() => {
           setLoading(false);
         }}
         loading={loading}
-        url={instance.url || ''}
+        url={instance.url || ""}
       />
     </div>
   );

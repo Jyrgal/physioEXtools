@@ -1,9 +1,9 @@
-import { Question, QuestionNS } from 'types';
-import { AssessmentRange } from 'components/assessment-range';
-import { TextInput } from 'components/text-input';
-import { Text } from 'components/text';
-import { memo, useRef } from 'react';
-import { Tabs } from 'components/tabs';
+import { Question, Type } from "types/question";
+import { AssessmentRange } from "components/assessment-range";
+import { TextInput } from "components/text-input";
+import { Text } from "components/text";
+import { memo, useRef } from "react";
+import { Tabs } from "components/tabs";
 
 export const QuestionGenerator = memo(
   ({
@@ -14,27 +14,27 @@ export const QuestionGenerator = memo(
     onClick: (value: string | string[] | number) => void;
   }): JSX.Element => {
     const emptyArray = [...Array(question.number)];
-    const inputs = useRef<string[]>(emptyArray.map(() => ''));
+    const inputs = useRef<string[]>(emptyArray.map(() => ""));
     switch (question.type) {
-      case QuestionNS.Type.TEXT: {
-        return <Text value={question.title || ''} styles="mt-10" />;
+      case Type.TEXT: {
+        return <Text value={question.title || ""} styles="mt-10" />;
       }
-      case QuestionNS.Type.RANGE: {
+      case Type.RANGE: {
         return (
           <AssessmentRange
-            title={question.title || ''}
-            minText={question.minimumText || ''}
-            maxText={question.maximumText || ''}
+            title={question.title || ""}
+            minText={question.minimumText || ""}
+            maxText={question.maximumText || ""}
             minValue={question.minimum || 0}
             maxValue={question.maximum || 10}
             onChange={(value) => onClick(value)}
           />
         );
       }
-      case QuestionNS.Type.TEXT_INPUT: {
+      case Type.TEXT_INPUT: {
         return (
           <>
-            <Text styles="font-medium" value={question.title || ''} />
+            <Text styles="font-medium" value={question.title || ""} />
             <div className="mt-6 w-2/3 self-center space-y-3">
               <TextInput
                 styles="flex-1 border border-gray-300 rounded-md p-2"
@@ -46,10 +46,10 @@ export const QuestionGenerator = memo(
           </>
         );
       }
-      case QuestionNS.Type.TEXT_INPUT_MULTIPLE: {
+      case Type.TEXT_INPUT_MULTIPLE: {
         return (
           <>
-            <Text styles="font-medium" value={question.title || ''} />
+            <Text styles="font-medium" value={question.title || ""} />
             <div className="mt-6 w-2/3 self-center space-y-3">
               {emptyArray.map((_, i) => {
                 const index = i + 1;
@@ -70,13 +70,13 @@ export const QuestionGenerator = memo(
           </>
         );
       }
-      case QuestionNS.Type.TABS: {
+      case Type.TABS: {
         return (
           <div className="mt-5 flex flex-col lg:flex-row h-auto justify-between items-center border-2 border-gray-200 rounded-lg p-4">
-            <Text value={question.title || ''} />
+            <Text value={question.title || ""} />
             <Tabs
               styles="mt-2"
-              values={question.values || ['']}
+              values={question.values || [""]}
               onClick={(value) => onClick(value)}
             />
           </div>
@@ -86,5 +86,5 @@ export const QuestionGenerator = memo(
         return <div />;
       }
     }
-  },
+  }
 );

@@ -1,35 +1,40 @@
-import { ChartBarIcon } from '@heroicons/react/outline';
+import { ChartBarIcon } from "@heroicons/react/outline";
 
-export const removeSpacesAndToLowerCase = (value: string) => value.replaceAll(' ', '').toLowerCase();
+export const removeSpacesAndToLowerCase = (value: string) =>
+  value.replaceAll(" ", "").toLowerCase();
 
-export const removePunctuation = (value: string) => value.replaceAll(/[^\p{L}\s]/gu, '');
+export const removePunctuation = (value: string) =>
+  value.replaceAll(/[^\p{L}\s]/gu, "");
 
-export const enumToStringArray = (enums: { [key: string]: string }): string[] => Object.keys(enums).map((name) => enums[name as keyof typeof enums]);
+export const enumToStringArray = (enums: { [key: string]: string }): string[] =>
+  Object.keys(enums).map((name) => enums[name as keyof typeof enums]);
 
 export const stringToEnum = (
   enumType: { [key: string]: string },
-  enumValue: string | null | undefined,
+  enumValue: string | null | undefined
 ): string => {
   const enums = Object.values(enumType);
   if (
-    enumValue === null
-    || enumValue === undefined
-    || !enums.includes(enumValue)
+    enumValue === null ||
+    enumValue === undefined ||
+    !enums.includes(enumValue)
   ) {
-    return 'UNKNOWN';
+    return "UNKNOWN";
   }
   const eunmIndex = enums.indexOf(enumValue);
   return Object.keys(enumType)[eunmIndex];
 };
 
-export const convertTitleCaseToDashCase = (value: string): string => value.toLowerCase().replaceAll(' ', '-');
+export const convertTitleCaseToDashCase = (value: string): string =>
+  value.toLowerCase().replaceAll(" ", "-");
 
-export const covertDashCaseToTitleCase = (value: string): string => value
-  .toLowerCase()
-  .replaceAll('-', ' ')
-  .split(' ')
-  .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-  .join(' ');
+export const covertDashCaseToTitleCase = (value: string): string =>
+  value
+    .toLowerCase()
+    .replaceAll("-", " ")
+    .split(" ")
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(" ");
 
 export const getIcon = (name?: string): JSX.Element => (
   <ChartBarIcon
@@ -41,26 +46,27 @@ export const getIcon = (name?: string): JSX.Element => (
 
 export const convertTabValuesToInteger = (value: string): number => {
   switch (value) {
-    case 'Never':
+    case "Never":
       return 0;
-    case 'Rarely':
+    case "Rarely":
       return 1;
-    case 'Sometimes':
+    case "Sometimes":
       return 2;
-    case 'Often':
+    case "Often":
       return 3;
-    case 'Always':
+    case "Always":
       return 4;
     default:
       return 0;
   }
 };
 
-export const covertTitleCaseToDashCase = (value: string): string => value.replace(' ', '-').toLowerCase();
+export const covertTitleCaseToDashCase = (value: string): string =>
+  value.replace(" ", "-").toLowerCase();
 
 export const getCurrentTime = () => {
   const current = new Date();
   return `${current.toLocaleDateString()} ${current.toLocaleTimeString(
-    'en-AU',
+    "en-AU"
   )}`;
 };

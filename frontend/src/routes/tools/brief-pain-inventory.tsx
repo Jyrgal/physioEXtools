@@ -1,10 +1,10 @@
-import { Text } from 'components/text';
-import { memo, useEffect, useState } from 'react';
-import { Separator } from 'components/separator';
-import { AssessmentRange } from 'components/assessment-range';
-import { usePDF } from '@react-pdf/renderer';
-import { Download } from 'components/download';
-import { BriefPainInventoryDocument } from 'components/documents/brief-pain-inventory';
+import { Text } from "components/text";
+import { memo, useEffect, useState } from "react";
+import { Separator } from "components/separator";
+import { AssessmentRange } from "components/assessment-range";
+import { usePDF } from "@react-pdf/renderer";
+import { Download } from "components/download";
+import { BriefPainInventoryDocument } from "components/documents/brief-pain-inventory";
 
 export const BriefPainInventory = memo(() => {
   const [worstValue, setWorstValue] = useState(0);
@@ -147,7 +147,7 @@ export const BriefPainInventory = memo(() => {
           setLoading(false);
         }}
         loading={loading}
-        url={instance.url || ''}
+        url={instance.url || ""}
       />
     </div>
   );

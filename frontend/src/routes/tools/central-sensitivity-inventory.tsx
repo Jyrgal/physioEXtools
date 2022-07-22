@@ -1,36 +1,36 @@
-import { Text } from 'components/text';
-import { memo, useEffect, useState } from 'react';
-import { usePDF } from '@react-pdf/renderer';
-import { Download } from 'components/download';
-import { Tabs } from 'components/tabs';
-import { CentralSensitivityInventoryDocument } from 'components/documents/central-sensitivity-inventory';
+import { Text } from "components/text";
+import { memo, useEffect, useState } from "react";
+import { usePDF } from "@react-pdf/renderer";
+import { Download } from "components/download";
+import { Tabs } from "components/tabs";
+import { CentralSensitivityInventoryDocument } from "components/documents/central-sensitivity-inventory";
 
 export const CentralSensitivityInventory = memo(() => {
-  const [morningValue, setMorningValue] = useState('Never');
-  const [musclesValue, setMusclesValue] = useState('Never');
-  const [anxietyValue, setAnxietyValue] = useState('Never');
-  const [grindValue, setGrindValue] = useState('Never');
-  const [diarrhoeaValue, setDiarrhoeaValue] = useState('Never');
-  const [dailyValue, setDailyValue] = useState('Never');
-  const [lightValue, setLightValue] = useState('Never');
-  const [activeValue, setActiveValue] = useState('Never');
-  const [painValue, setPainValue] = useState('Never');
-  const [headacheValue, setHeadacheValue] = useState('Never');
-  const [discomfortValue, setDiscomfortValue] = useState('Never');
-  const [sleepValue, setSleepValue] = useState('Never');
-  const [concentrateValue, setConcentrateValue] = useState('Never');
-  const [skinValue, setSkinValue] = useState('Never');
-  const [stressValue, setStressValue] = useState('Never');
-  const [sadValue, setSadValue] = useState('Never');
-  const [energyValue, setEnergyValue] = useState('Never');
-  const [tensionValue, setTensionValue] = useState('Never');
-  const [jawValue, setJawValue] = useState('Never');
-  const [smellValue, setSmellValue] = useState('Never');
-  const [urinateValue, setUrinateValue] = useState('Never');
-  const [legsValue, setLegsValue] = useState('Never');
-  const [rememberValue, setRememberValue] = useState('Never');
-  const [traumaValue, setTraumaValue] = useState('Never');
-  const [pelvicValue, setPelvicValue] = useState('Never');
+  const [morningValue, setMorningValue] = useState("Never");
+  const [musclesValue, setMusclesValue] = useState("Never");
+  const [anxietyValue, setAnxietyValue] = useState("Never");
+  const [grindValue, setGrindValue] = useState("Never");
+  const [diarrhoeaValue, setDiarrhoeaValue] = useState("Never");
+  const [dailyValue, setDailyValue] = useState("Never");
+  const [lightValue, setLightValue] = useState("Never");
+  const [activeValue, setActiveValue] = useState("Never");
+  const [painValue, setPainValue] = useState("Never");
+  const [headacheValue, setHeadacheValue] = useState("Never");
+  const [discomfortValue, setDiscomfortValue] = useState("Never");
+  const [sleepValue, setSleepValue] = useState("Never");
+  const [concentrateValue, setConcentrateValue] = useState("Never");
+  const [skinValue, setSkinValue] = useState("Never");
+  const [stressValue, setStressValue] = useState("Never");
+  const [sadValue, setSadValue] = useState("Never");
+  const [energyValue, setEnergyValue] = useState("Never");
+  const [tensionValue, setTensionValue] = useState("Never");
+  const [jawValue, setJawValue] = useState("Never");
+  const [smellValue, setSmellValue] = useState("Never");
+  const [urinateValue, setUrinateValue] = useState("Never");
+  const [legsValue, setLegsValue] = useState("Never");
+  const [rememberValue, setRememberValue] = useState("Never");
+  const [traumaValue, setTraumaValue] = useState("Never");
+  const [pelvicValue, setPelvicValue] = useState("Never");
   const [loading, setLoading] = useState(false);
 
   const [instance, updateInstance] = usePDF({
@@ -95,7 +95,7 @@ export const CentralSensitivityInventory = memo(() => {
     updateInstance,
   ]);
 
-  const tabValues = ['Never', 'Rarely', 'Sometimes', 'Often', 'Always'];
+  const tabValues = ["Never", "Rarely", "Sometimes", "Often", "Always"];
 
   return (
     <div className="flex flex-col">
@@ -307,7 +307,7 @@ export const CentralSensitivityInventory = memo(() => {
           setLoading(false);
         }}
         loading={loading}
-        url={instance.url || ''}
+        url={instance.url || ""}
       />
     </div>
   );

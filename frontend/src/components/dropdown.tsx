@@ -1,6 +1,6 @@
-import { Fragment, memo, useEffect, useState } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
+import { Fragment, memo, useEffect, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 export const Dropdown = memo(
   ({
@@ -27,10 +27,10 @@ export const Dropdown = memo(
               <div className="font-light">{label}</div>
               <div
                 className={`${
-                  selected.length === 0 ? 'font-thin italic' : 'font-medium'
+                  selected.length === 0 ? "font-thin italic" : "font-medium"
                 }`}
               >
-                {selected.length === 0 ? placeholder : selected.join(', ')}
+                {selected.length === 0 ? placeholder : selected.join(", ")}
               </div>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 <SelectorIcon
@@ -47,20 +47,22 @@ export const Dropdown = memo(
             leaveTo="opacity-0"
           >
             <Listbox.Options className="z-10 absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {values
-                && values.map((value) => (
+              {values &&
+                values.map((value) => (
                   <Listbox.Option
                     key={value}
-                    className={({ active }) => `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-blue-100 text-blue-900' : 'text-gray-900'
-                    }`}
+                    className={({ active }) =>
+                      `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                        active ? "bg-blue-100 text-blue-900" : "text-gray-900"
+                      }`
+                    }
                     value={value}
                   >
                     {({ selected }) => (
                       <>
                         <span
                           className={`block truncate ${
-                            selected ? 'font-medium' : 'font-normal'
+                            selected ? "font-medium" : "font-normal"
                           }`}
                         >
                           {value}
@@ -79,5 +81,5 @@ export const Dropdown = memo(
         </div>
       </Listbox>
     );
-  },
+  }
 );

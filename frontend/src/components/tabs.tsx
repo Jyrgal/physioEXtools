@@ -1,8 +1,8 @@
-import { memo } from 'react';
-import { Tab } from '@headlessui/react';
+import { memo } from "react";
+import { Tab } from "@headlessui/react";
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 export const Tabs = memo(
@@ -103,13 +103,15 @@ export const Tabs = memo(
           {values.map((value) => (
             <Tab
               key={value}
-              className={({ selected }) => classNames(
-                'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700',
-                'ring-white focus:outline-none focus:ring-2',
-                selected
-                  ? 'bg-white shadow'
-                  : 'text-blue-600 hover:text-blue-400',
-              )}
+              className={({ selected }) =>
+                classNames(
+                  "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
+                  "ring-white focus:outline-none focus:ring-2",
+                  selected
+                    ? "bg-white shadow"
+                    : "text-blue-600 hover:text-blue-400"
+                )
+              }
               onClick={() => onClick(value)}
             >
               {value}
@@ -118,5 +120,5 @@ export const Tabs = memo(
         </Tab.List>
       </Tab.Group>
     </div>
-  ),
+  )
 );

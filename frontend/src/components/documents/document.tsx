@@ -1,22 +1,23 @@
-import { useEffect, useState } from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
-import { convertTabValuesToInteger, getCurrentTime } from 'utils';
-import { Layout } from 'components/documents/layout';
-import { Assessment, Question, QuestionNS } from 'types';
+import { useEffect, useState } from "react";
+import { Text, View, StyleSheet } from "@react-pdf/renderer";
+import { convertTabValuesToInteger, getCurrentTime } from "utils";
+import { Layout } from "components/documents/layout";
+import { Assessment } from "types/assessment";
+import { Question, Type } from "types/question";
 
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'column',
-    backgroundColor: '#E4E4E4',
-    display: 'flex',
-    fontFamily: 'Open Sans',
+    flexDirection: "column",
+    backgroundColor: "#E4E4E4",
+    display: "flex",
+    fontFamily: "Open Sans",
   },
   header: {
     margin: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
     fontSize: 14,
   },
   section: {
@@ -42,16 +43,16 @@ const styles = StyleSheet.create({
     margin: 5,
     marginHorizontal: 20,
     padding: 10,
-    border: '1px solid gray',
+    border: "1px solid gray",
   },
   tabBodySection: {
     margin: 5,
     marginHorizontal: 10,
     padding: 10,
-    border: '1px solid gray',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    border: "1px solid gray",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 
@@ -61,9 +62,11 @@ export function Document({
   questions,
 }: {
   assessment?: Assessment;
-  values: {};
+  // eslint-disable-next-line
+  values: Map<number, any>;
   questions?: Question[];
 }) {
+  // eslint-disable-next-line
   const [valuesMap, setValuesMap] = useState(new Map<number, any>());
   useEffect(() => {
     Object.entries(values).map(([key, value]) => {
@@ -83,7 +86,7 @@ export function Document({
         {questions?.map((question, i) => {
           const value = valuesMap.get(i);
           switch (question.type) {
-            case QuestionNS.Type.TEXT: {
+            case Type.TEXT: {
               return (
                 <View style={styles.subheading} wrap={false}>
                   <Text style={styles.body} wrap={false}>
@@ -92,7 +95,7 @@ export function Document({
                 </View>
               );
             }
-            case QuestionNS.Type.RANGE: {
+            case Type.RANGE: {
               return (
                 <View style={styles.bodySection} wrap={false}>
                   <Text style={styles.body} wrap={false}>
@@ -105,7 +108,7 @@ export function Document({
                 </View>
               );
             }
-            case QuestionNS.Type.TEXT_INPUT: {
+            case Type.TEXT_INPUT: {
               return (
                 <View style={styles.bodySection} wrap={false}>
                   <Text style={styles.body} wrap={false}>
@@ -115,7 +118,7 @@ export function Document({
                 </View>
               );
             }
-            case QuestionNS.Type.TEXT_INPUT_MULTIPLE: {
+            case Type.TEXT_INPUT_MULTIPLE: {
               let arrayValues: string[];
               if (!value) {
                 arrayValues = [];
@@ -129,26 +132,21 @@ export function Document({
                   </Text>
                   {arrayValues.map((a, i) => (
                     <Text style={styles.body}>
-                      {i + 1}
-                      .
-                      {a}
+                      {i + 1}.{a}
                     </Text>
                   ))}
                 </View>
               );
             }
-            case QuestionNS.Type.TABS: {
+            case Type.TABS: {
               return (
                 <View style={styles.tabBodySection} wrap={false}>
                   <Text style={styles.body} wrap={false}>
                     {question.title}
                   </Text>
                   <Text style={styles.body} wrap={false}>
-                    {value || question?.values?.[0]}
-                    {' '}
-                    (
-                    {convertTabValuesToInteger(value)}
-                    )
+                    {value || question?.values?.[0]} (
+                    {convertTabValuesToInteger(value)})
                   </Text>
                 </View>
               );

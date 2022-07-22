@@ -1,7 +1,7 @@
-import { memo } from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
-import { getCurrentTime, convertTabValuesToInteger } from 'utils';
-import { Layout } from 'components/documents/layout';
+import { memo } from "react";
+import { Text, View, StyleSheet } from "@react-pdf/renderer";
+import { getCurrentTime, convertTabValuesToInteger } from "utils";
+import { Layout } from "components/documents/layout";
 
 const styles = StyleSheet.create({
   section: {
@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
     margin: 5,
     marginHorizontal: 20,
     padding: 10,
-    border: '1px solid gray',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    border: "1px solid gray",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 
@@ -98,41 +98,25 @@ export const CentralSensitivityInventoryDocument = memo(
           1. I feel unrefreshed when I wake up in the morning
         </Text>
         <Text style={styles.body}>
-          {morningValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(morningValue)}
-          )
+          {morningValue} ({convertTabValuesToInteger(morningValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>2. My muscles feel stiff and achy</Text>
         <Text style={styles.body}>
-          {musclesValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(musclesValue)}
-          )
+          {musclesValue} ({convertTabValuesToInteger(musclesValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>3. I have anxiety attacks</Text>
         <Text style={styles.body}>
-          {anxietyValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(anxietyValue)}
-          )
+          {anxietyValue} ({convertTabValuesToInteger(anxietyValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>4. I grind or clench my teeth</Text>
         <Text style={styles.body}>
-          {grindValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(grindValue)}
-          )
+          {grindValue} ({convertTabValuesToInteger(grindValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -140,11 +124,7 @@ export const CentralSensitivityInventoryDocument = memo(
           5. I have problems with diarrhoea and/or constipation
         </Text>
         <Text style={styles.body}>
-          {diarrhoeaValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(diarrhoeaValue)}
-          )
+          {diarrhoeaValue} ({convertTabValuesToInteger(diarrhoeaValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -152,21 +132,13 @@ export const CentralSensitivityInventoryDocument = memo(
           6. I need help in performing my daily activities
         </Text>
         <Text style={styles.body}>
-          {dailyValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(dailyValue)}
-          )
+          {dailyValue} ({convertTabValuesToInteger(dailyValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>7. I am sensitive to bright lights</Text>
         <Text style={styles.body}>
-          {lightValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(lightValue)}
-          )
+          {lightValue} ({convertTabValuesToInteger(lightValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -174,31 +146,19 @@ export const CentralSensitivityInventoryDocument = memo(
           8. I get tired very easily when I am physically active
         </Text>
         <Text style={styles.body}>
-          {activeValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(activeValue)}
-          )
+          {activeValue} ({convertTabValuesToInteger(activeValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>9. I feel pain all over my body</Text>
         <Text style={styles.body}>
-          {painValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(painValue)}
-          )
+          {painValue} ({convertTabValuesToInteger(painValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>10. I have headaches</Text>
         <Text style={styles.body}>
-          {headacheValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(headacheValue)}
-          )
+          {headacheValue} ({convertTabValuesToInteger(headacheValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -206,31 +166,19 @@ export const CentralSensitivityInventoryDocument = memo(
           11. I feel discomfort in my bladder and/or burning when I urinate
         </Text>
         <Text style={styles.body}>
-          {discomfortValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(discomfortValue)}
-          )
+          {discomfortValue} ({convertTabValuesToInteger(discomfortValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>12. I do not sleep well</Text>
         <Text style={styles.body}>
-          {sleepValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(sleepValue)}
-          )
+          {sleepValue} ({convertTabValuesToInteger(sleepValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>13. I have difficulty concentrating</Text>
         <Text style={styles.body}>
-          {concentrateValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(concentrateValue)}
-          )
+          {concentrateValue} ({convertTabValuesToInteger(concentrateValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -238,11 +186,7 @@ export const CentralSensitivityInventoryDocument = memo(
           14. I have skin problems such as dryness, itchiness or rashes
         </Text>
         <Text style={styles.body}>
-          {skinValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(skinValue)}
-          )
+          {skinValue} ({convertTabValuesToInteger(skinValue)})
         </Text>
       </View>
       <View style={styles.bodySection} wrap={false}>
@@ -250,11 +194,7 @@ export const CentralSensitivityInventoryDocument = memo(
           15. Stress makes my physical symptoms get worse
         </Text>
         <Text style={styles.body}>
-          {stressValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(stressValue)}
-          )
+          {stressValue} ({convertTabValuesToInteger(stressValue)})
         </Text>
       </View>
       <View style={styles.bodySection} wrap={false}>
@@ -262,21 +202,13 @@ export const CentralSensitivityInventoryDocument = memo(
           16. I feel sad or depressed
         </Text>
         <Text style={styles.body}>
-          {sadValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(sadValue)}
-          )
+          {sadValue} ({convertTabValuesToInteger(sadValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>17. I have low energy</Text>
         <Text style={styles.body}>
-          {energyValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(energyValue)}
-          )
+          {energyValue} ({convertTabValuesToInteger(energyValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -284,21 +216,13 @@ export const CentralSensitivityInventoryDocument = memo(
           18. I have muscle tension in my neck and shoulders
         </Text>
         <Text style={styles.body}>
-          {tensionValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(tensionValue)}
-          )
+          {tensionValue} ({convertTabValuesToInteger(tensionValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>19. I have pain in my jaw</Text>
         <Text style={styles.body}>
-          {jawValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(jawValue)}
-          )
+          {jawValue} ({convertTabValuesToInteger(jawValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -306,21 +230,13 @@ export const CentralSensitivityInventoryDocument = memo(
           20. Certain smells, such as perfumes, make me feel dizzy and nauseated
         </Text>
         <Text style={styles.body}>
-          {smellValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(smellValue)}
-          )
+          {smellValue} ({convertTabValuesToInteger(smellValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>21. I have to urinate frequently</Text>
         <Text style={styles.body}>
-          {urinateValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(urinateValue)}
-          )
+          {urinateValue} ({convertTabValuesToInteger(urinateValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -329,11 +245,7 @@ export const CentralSensitivityInventoryDocument = memo(
           sleep at night
         </Text>
         <Text style={styles.body}>
-          {legsValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(legsValue)}
-          )
+          {legsValue} ({convertTabValuesToInteger(legsValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
@@ -341,33 +253,21 @@ export const CentralSensitivityInventoryDocument = memo(
           23. I have difficulty remembering things
         </Text>
         <Text style={styles.body}>
-          {rememberValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(rememberValue)}
-          )
+          {rememberValue} ({convertTabValuesToInteger(rememberValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>24. I suffered trauma as a child</Text>
         <Text style={styles.body}>
-          {traumaValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(traumaValue)}
-          )
+          {traumaValue} ({convertTabValuesToInteger(traumaValue)})
         </Text>
       </View>
       <View style={styles.bodySection}>
         <Text style={styles.body}>25. I have pain in my pelvic area</Text>
         <Text style={styles.body}>
-          {pelvicValue}
-          {' '}
-          (
-          {convertTabValuesToInteger(pelvicValue)}
-          )
+          {pelvicValue} ({convertTabValuesToInteger(pelvicValue)})
         </Text>
       </View>
     </Layout>
-  ),
+  )
 );

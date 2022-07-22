@@ -1,6 +1,6 @@
-import { memo, useState } from 'react';
-import { Text } from 'components/text';
-import { Range } from 'components/range';
+import { memo, useState } from "react";
+import { Text } from "components/text";
+import { Range } from "components/range";
 
 export const AssessmentRange = memo(
   ({
@@ -27,9 +27,9 @@ export const AssessmentRange = memo(
             min={minValue}
             max={maxValue}
             step={1}
-            onChange={(value) => {
-              setValue(value);
-              onChange && onChange(value);
+            onChange={(newValue) => {
+              setValue(newValue);
+              onChange && onChange(newValue);
             }}
           />
         </div>
@@ -43,5 +43,5 @@ export const AssessmentRange = memo(
         </div>
       </div>
     );
-  },
+  }
 );

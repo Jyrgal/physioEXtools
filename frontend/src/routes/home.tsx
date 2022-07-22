@@ -1,6 +1,6 @@
-import { SearchBar } from 'components/search-bar';
-import { memo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { SearchBar } from "components/search-bar";
+import { memo } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Home = memo(() => {
   const navigate = useNavigate();

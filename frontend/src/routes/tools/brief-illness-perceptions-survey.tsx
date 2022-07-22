@@ -1,11 +1,11 @@
-import { Text } from 'components/text';
-import { memo, useEffect, useState } from 'react';
-import { Separator } from 'components/separator';
-import { AssessmentRange } from 'components/assessment-range';
-import { TextInput } from 'components/text-input';
-import { usePDF } from '@react-pdf/renderer';
-import { BriefIllnessPerceptionsSurveyDocument } from 'components/documents/brief-illness-perceptions-survey';
-import { Download } from 'components/download';
+import { Text } from "components/text";
+import { memo, useEffect, useState } from "react";
+import { Separator } from "components/separator";
+import { AssessmentRange } from "components/assessment-range";
+import { TextInput } from "components/text-input";
+import { usePDF } from "@react-pdf/renderer";
+import { BriefIllnessPerceptionsSurveyDocument } from "components/documents/brief-illness-perceptions-survey";
+import { Download } from "components/download";
 
 export const BriefIllnessPerceptionsSurvey = memo(() => {
   const [affectValue, setAffectValue] = useState(0);
@@ -18,9 +18,9 @@ export const BriefIllnessPerceptionsSurvey = memo(() => {
   const [understandValue, setUnderstandValue] = useState(0);
   const [injureValue, setInjureValue] = useState(0);
   const [emotionalValue, setEmotionalValue] = useState(0);
-  const [factor1, setFactor1] = useState('');
-  const [factor2, setFactor2] = useState('');
-  const [factor3, setFactor3] = useState('');
+  const [factor1, setFactor1] = useState("");
+  const [factor2, setFactor2] = useState("");
+  const [factor3, setFactor3] = useState("");
   const [loading, setLoading] = useState(false);
 
   const [instance, updateInstance] = usePDF({
@@ -193,7 +193,7 @@ export const BriefIllnessPerceptionsSurvey = memo(() => {
           setLoading(false);
         }}
         loading={loading}
-        url={instance.url || ''}
+        url={instance.url || ""}
       />
     </div>
   );

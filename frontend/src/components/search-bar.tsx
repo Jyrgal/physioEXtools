@@ -1,15 +1,15 @@
-import { Popover, Transition } from '@headlessui/react';
-import { Button } from 'components/button';
-import { Fragment, memo, useState } from 'react';
+import { Popover, Transition } from "@headlessui/react";
+import { Button } from "components/button";
+import { Fragment, memo, useState } from "react";
 import {
   convertTitleCaseToDashCase,
   removePunctuation,
   removeSpacesAndToLowerCase,
-} from 'utils';
+} from "utils";
 
-import { ChartBarIcon } from '@heroicons/react/outline';
-import { useAssessment } from 'contexts/assessment';
-import { IAssessment } from 'types';
+import { ChartBarIcon } from "@heroicons/react/outline";
+import { useAssessment } from "contexts/assessment";
+import { IAssessment } from "types/assessment";
 
 export interface AssessmentOption {
   title: string;
@@ -103,38 +103,38 @@ export interface SearchOption {
 export const SearchBar = memo(
   ({
     // items,
-    filters = [''],
+    filters = [""],
     onClick,
   }: {
     // items?: string[];
     filters?: string[];
     onClick?: (value?: string) => void;
   }) => {
-    const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState("");
     const [showSearch, setShowSearch] = useState(false);
     const [filteredSearch, setFilteredSearch] = useState<IAssessment[]>();
     const { assessments } = useAssessment();
     const searchArray = assessments.map((assessment) => {
       const title = removeSpacesAndToLowerCase(
-        removePunctuation(assessment.title || ''),
+        removePunctuation(assessment.title || "")
       );
       const orientation = removeSpacesAndToLowerCase(
-        removePunctuation(assessment.orientation || ''),
+        removePunctuation(assessment.orientation || "")
       );
       const categories = removeSpacesAndToLowerCase(
-        assessment.categories?.join('') || '',
+        assessment.categories?.join("") || ""
       );
       const areas = removeSpacesAndToLowerCase(
-        removePunctuation(assessment.areas?.join('') || ''),
+        removePunctuation(assessment.areas?.join("") || "")
       );
       const topics = removeSpacesAndToLowerCase(
-        removePunctuation(assessment.topics?.join('') || ''),
+        removePunctuation(assessment.topics?.join("") || "")
       );
       const subTopics = removeSpacesAndToLowerCase(
-        removePunctuation(assessment.subTopics?.join('') || ''),
+        removePunctuation(assessment.subTopics?.join("") || "")
       );
       const tags = removeSpacesAndToLowerCase(
-        removePunctuation(assessment.tags?.join('') || ''),
+        removePunctuation(assessment.tags?.join("") || "")
       );
       return (
         title + orientation + categories + areas + topics + subTopics + tags
@@ -180,19 +180,19 @@ export const SearchBar = memo(
                       e.preventDefault();
                       setSearchText(
                         removeSpacesAndToLowerCase(
-                          removePunctuation(e.target.value),
-                        ),
+                          removePunctuation(e.target.value)
+                        )
                       );
                       const options: IAssessment[] = [];
                       searchArray.map((value, index) => {
                         if (
                           value.includes(
                             removeSpacesAndToLowerCase(
-                              removePunctuation(e.target.value),
-                            )
-                              + removeSpacesAndToLowerCase(
-                                removePunctuation(filters.join('')),
-                              ),
+                              removePunctuation(e.target.value)
+                            ) +
+                              removeSpacesAndToLowerCase(
+                                removePunctuation(filters.join(""))
+                              )
                           )
                         ) {
                           options.push(assessments[index]);
@@ -225,10 +225,10 @@ export const SearchBar = memo(
                       searchArray.map((value, index) => {
                         if (
                           value.includes(
-                            searchText
-                              + removeSpacesAndToLowerCase(
-                                removePunctuation(filters.join('')),
-                              ),
+                            searchText +
+                              removeSpacesAndToLowerCase(
+                                removePunctuation(filters.join(""))
+                              )
                           )
                         ) {
                           options.push(assessments[index]);
@@ -244,10 +244,10 @@ export const SearchBar = memo(
                       searchArray.map((value, index) => {
                         if (
                           value.includes(
-                            searchText
-                              + removeSpacesAndToLowerCase(
-                                removePunctuation(filters.join('')),
-                              ),
+                            searchText +
+                              removeSpacesAndToLowerCase(
+                                removePunctuation(filters.join(""))
+                              )
                           )
                         ) {
                           options.push(assessments[index]);
@@ -279,9 +279,9 @@ export const SearchBar = memo(
                             key={item.title}
                             className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             onClick={() => {
-                              onClick
-                                && onClick(
-                                  convertTitleCaseToDashCase(item.title || ''),
+                              onClick &&
+                                onClick(
+                                  convertTitleCaseToDashCase(item.title || "")
                                 );
                             }}
                           >
@@ -309,5 +309,5 @@ export const SearchBar = memo(
         </Popover.Group>
       </form>
     );
-  },
+  }
 );

@@ -1,6 +1,6 @@
-import './App.css';
-import { AssessmentProvider } from 'contexts/assessment';
-import { Navigation } from 'navigation/navigation';
+import "./App.css";
+import { AssessmentProvider } from "contexts/assessment";
+import { Navigation } from "navigation/navigation";
 
 function App() {
   return (

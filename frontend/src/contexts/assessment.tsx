@@ -7,10 +7,11 @@ import {
   useCallback,
   useState,
   useEffect,
-} from 'react';
-import assessmentsList from 'constants/assessments.json';
-import questionsList from 'constants/questions.json';
-import { Assessment, IAssessment, Question } from 'types/index';
+} from "react";
+import assessmentsList from "constants/assessments.json";
+import questionsList from "constants/questions.json";
+import { Question } from "types/question";
+import { Assessment, IAssessment } from "types/assessment";
 
 interface Store {
   assessments: IAssessment[];
@@ -21,7 +22,7 @@ interface Store {
 }
 
 const handleProviderNotSet = () => {
-  throw new Error('Assessment provider not set');
+  throw new Error("Assessment provider not set");
 };
 
 const AssessmentContext = createContext<Store>({
@@ -36,10 +37,10 @@ export const AssessmentProvider = memo(
   ({ children }: { children: ReactNode }) => {
     const [assessments, setAssessments] = useState<Assessment[]>([]);
     const [assessmentsMap, setAssessmentsMap] = useState(
-      new Map<string, Assessment>(),
+      new Map<string, Assessment>()
     );
     const [questionsMap, setQuestionsMap] = useState(
-      new Map<string, Question[]>(),
+      new Map<string, Question[]>()
     );
 
     const getAssessments = useCallback(() => {
@@ -110,12 +111,14 @@ export const AssessmentProvider = memo(
           // };
           const convertedAssessment = new Assessment();
           Object.assign(convertedAssessment, assessment);
-          setAssessmentsMap((assessmentsMap) => assessmentsMap.set(
-            assessment.title.toLowerCase(),
-            convertedAssessment,
-          ));
+          setAssessmentsMap((assessmentsMap) =>
+            assessmentsMap.set(
+              assessment.title.toLowerCase(),
+              convertedAssessment
+            )
+          );
           return convertedAssessment;
-        },
+        }
       );
       setAssessments(converted);
       return converted;
@@ -130,7 +133,7 @@ export const AssessmentProvider = memo(
             const jsonParsedQuestion = new Question();
             Object.assign(jsonParsedQuestion, question);
             return jsonParsedQuestion;
-          },
+          }
         );
         setQuestionsMap((questionsMap) => questionsMap.set(title, questions));
       });
@@ -149,7 +152,7 @@ export const AssessmentProvider = memo(
         getAssessments,
         getQuestions,
       }),
-      [assessments, assessmentsMap, questionsMap, getAssessments, getQuestions],
+      [assessments, assessmentsMap, questionsMap, getAssessments, getQuestions]
     );
 
     return (
@@ -157,7 +160,7 @@ export const AssessmentProvider = memo(
         {children}
       </AssessmentContext.Provider>
     );
-  },
+  }
 );
 
 export const useAssessment = () => useContext(AssessmentContext);

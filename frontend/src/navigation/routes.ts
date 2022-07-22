@@ -1,6 +1,6 @@
 enum Routes {
-  HOME = '',
-  TOOLS = 'tools',
+  HOME = "",
+  TOOLS = "tools",
 }
 
 export default Routes;

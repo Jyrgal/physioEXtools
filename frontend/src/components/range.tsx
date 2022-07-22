@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo } from "react";
 
 export const Range = memo(
   ({
@@ -40,5 +40,5 @@ export const Range = memo(
         </ul>
       </div>
     );
-  },
+  }
 );

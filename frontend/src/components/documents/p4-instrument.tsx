@@ -1,21 +1,21 @@
-import { memo } from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
-import { getCurrentTime } from 'utils';
-import { Layout } from 'components/documents/layout';
+import { memo } from "react";
+import { Text, View, StyleSheet } from "@react-pdf/renderer";
+import { getCurrentTime } from "utils";
+import { Layout } from "components/documents/layout";
 
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'column',
-    backgroundColor: '#E4E4E4',
-    display: 'flex',
-    fontFamily: 'Open Sans',
+    flexDirection: "column",
+    backgroundColor: "#E4E4E4",
+    display: "flex",
+    fontFamily: "Open Sans",
   },
   header: {
     margin: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
     fontSize: 14,
   },
   section: {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     margin: 5,
     marginHorizontal: 20,
     padding: 10,
-    border: '1px solid gray',
+    border: "1px solid gray",
   },
 });
 
@@ -103,5 +103,5 @@ export const P4InstrumentDocument = memo(
         </Text>
       </View>
     </Layout>
-  ),
+  )
 );

@@ -1,18 +1,19 @@
-import { Text } from 'components/text';
-import { memo, useEffect, useState } from 'react';
-import { Separator } from 'components/separator';
-import { usePDF } from '@react-pdf/renderer';
-import { Download } from 'components/download';
-import { useAssessment } from 'contexts/assessment';
-import { Assessment, Question } from 'types';
-import { QuestionGenerator } from 'components/question';
-import { Document } from 'components/documents/document';
-import { convertTitleCaseToDashCase } from 'utils';
+import { Text } from "components/text";
+import { memo, useEffect, useState } from "react";
+import { Separator } from "components/separator";
+import { usePDF } from "@react-pdf/renderer";
+import { Download } from "components/download";
+import { useAssessment } from "contexts/assessment";
+import { Question } from "types/question";
+import { Assessment } from "types/assessment";
+import { QuestionGenerator } from "components/question";
+import { Document } from "components/documents/document";
+import { convertTitleCaseToDashCase } from "utils";
 
 export const ToolScaffold = memo(
   ({ assessment }: { assessment?: Assessment }) => {
     const [values, setValues] = useState(
-      new Map<number, string | string[] | number>(),
+      new Map<number, string | string[] | number>()
     );
     const [loading, setLoading] = useState(false);
     const { questionsMap } = useAssessment();
@@ -58,18 +59,17 @@ export const ToolScaffold = memo(
           </>
         ))}
         <Download
-          download={
-            `${convertTitleCaseToDashCase(assessment?.title || 'assessment')
-            }.pdf`
-          }
+          download={`${convertTitleCaseToDashCase(
+            assessment?.title || "assessment"
+          )}.pdf`}
           onClick={() => {
             setLoading(true);
             setLoading(false);
           }}
           loading={loading}
-          url={instance.url || ''}
+          url={instance.url || ""}
         />
       </div>
     );
-  },
+  }
 );

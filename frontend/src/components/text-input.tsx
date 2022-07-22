@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo } from "react";
 
 export const TextInput = memo(
   ({
@@ -21,5 +21,5 @@ export const TextInput = memo(
       }}
       placeholder={placeholder}
     />
-  ),
+  )
 );

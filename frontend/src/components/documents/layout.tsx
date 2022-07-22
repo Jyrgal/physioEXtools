@@ -1,4 +1,4 @@
-import { memo, ReactNode } from 'react';
+import { memo, ReactNode } from "react";
 import {
   Page,
   Text,
@@ -7,16 +7,16 @@ import {
   Document,
   StyleSheet,
   Font,
-} from '@react-pdf/renderer';
+} from "@react-pdf/renderer";
 
 Font.register({
-  family: 'Open Sans',
+  family: "Open Sans",
   fonts: [
     {
-      src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf',
+      src: "https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf",
     },
     {
-      src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf',
+      src: "https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf",
       fontWeight: 600,
     },
   ],
@@ -25,18 +25,18 @@ Font.register({
 // Create styles
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'column',
-    backgroundColor: '#E4E4E4',
-    display: 'flex',
-    fontFamily: 'Open Sans',
+    flexDirection: "column",
+    backgroundColor: "#E4E4E4",
+    display: "flex",
+    fontFamily: "Open Sans",
     padding: 40,
   },
   header: {
     margin: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
     fontSize: 14,
   },
   section: {
@@ -59,10 +59,10 @@ const styles = StyleSheet.create({
     margin: 5,
     marginHorizontal: 20,
     padding: 10,
-    border: '1px solid gray',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    border: "1px solid gray",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 

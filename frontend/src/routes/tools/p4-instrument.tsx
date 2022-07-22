@@ -1,10 +1,10 @@
-import { Text } from 'components/text';
-import { memo, useEffect, useState } from 'react';
-import { Separator } from 'components/separator';
-import { AssessmentRange } from 'components/assessment-range';
-import { usePDF } from '@react-pdf/renderer';
-import { Download } from 'components/download';
-import { P4InstrumentDocument } from 'components/documents/p4-instrument';
+import { Text } from "components/text";
+import { memo, useEffect, useState } from "react";
+import { Separator } from "components/separator";
+import { AssessmentRange } from "components/assessment-range";
+import { usePDF } from "@react-pdf/renderer";
+import { Download } from "components/download";
+import { P4InstrumentDocument } from "components/documents/p4-instrument";
 
 export const P4Instrument = memo(() => {
   const [morningValue, setMorningValue] = useState(0);
@@ -74,7 +74,7 @@ export const P4Instrument = memo(() => {
           setLoading(false);
         }}
         loading={loading}
-        url={instance.url || ''}
+        url={instance.url || ""}
       />
     </div>
   );
