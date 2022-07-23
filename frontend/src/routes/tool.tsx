@@ -7,9 +7,10 @@ export const Tool = memo(() => {
   const params = useParams();
   const { assessmentsMap } = useAssessment();
   const parsedName = params.toolId
-    ?.split("-")
+    ?.split("%20")
     .map((val) => val.charAt(0).toUpperCase() + val.slice(1))
-    .join(" ");
+    .join(" ")
+    .replace(/  +/g, " ");
 
   return (
     <div className="md:px-24">

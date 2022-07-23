@@ -28,6 +28,9 @@ export const stringToEnum = (
 export const convertTitleCaseToDashCase = (value: string): string =>
   value.toLowerCase().replaceAll(" ", "-");
 
+export const convertTitleCaseToURL = (value: string): string =>
+  value.toLowerCase().replaceAll(" ", "%20");
+
 export const covertDashCaseToTitleCase = (value: string): string =>
   value
     .toLowerCase()

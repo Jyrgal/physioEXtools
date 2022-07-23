@@ -2,11 +2,10 @@ import { Popover, Transition } from "@headlessui/react";
 import { Button } from "components/button";
 import { Fragment, memo, useState } from "react";
 import {
-  convertTitleCaseToDashCase,
+  convertTitleCaseToURL,
   removePunctuation,
   removeSpacesAndToLowerCase,
 } from "utils";
-
 import { ChartBarIcon } from "@heroicons/react/outline";
 import { useAssessment } from "contexts/assessment";
 import { IAssessment } from "types/assessment";
@@ -281,7 +280,7 @@ export const SearchBar = memo(
                             onClick={() => {
                               onClick &&
                                 onClick(
-                                  convertTitleCaseToDashCase(item.title || "")
+                                  convertTitleCaseToURL(item.title || "")
                                 );
                             }}
                           >

@@ -8,7 +8,6 @@ import { Question } from "types/question";
 import { Assessment } from "types/assessment";
 import { QuestionGenerator } from "components/question";
 import { Document } from "components/documents/document";
-import { convertTitleCaseToDashCase } from "utils";
 
 export const ToolScaffold = memo(
   ({ assessment }: { assessment?: Assessment }) => {
@@ -25,6 +24,7 @@ export const ToolScaffold = memo(
     const [instance, updateInstance] = usePDF({
       document: (
         <Document
+          key={assessment?.title}
           assessment={assessment}
           questions={questions}
           values={values}
@@ -59,9 +59,7 @@ export const ToolScaffold = memo(
           </>
         ))}
         <Download
-          download={`${convertTitleCaseToDashCase(
-            assessment?.title || "assessment"
-          )}.pdf`}
+          download={`${assessment?.title || "assessment"}.pdf`}
           onClick={() => {
             setLoading(true);
             setLoading(false);

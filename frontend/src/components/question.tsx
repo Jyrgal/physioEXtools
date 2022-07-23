@@ -4,6 +4,8 @@ import { TextInput } from "components/text-input";
 import { Text } from "components/text";
 import { memo, useRef } from "react";
 import { Tabs } from "components/tabs";
+import { RadioButtons } from "components/radio-buttons";
+import { CheckBoxes } from "components/check-boxes";
 
 export const QuestionGenerator = memo(
   ({
@@ -72,7 +74,7 @@ export const QuestionGenerator = memo(
       }
       case Type.TABS: {
         return (
-          <div className="mt-5 flex flex-col lg:flex-row h-auto justify-between items-center border-2 border-gray-200 rounded-lg p-4">
+          <div className="mt-5 flex flex-col lg:flex-row lg:space-x-4 h-auto justify-between items-center border-2 border-gray-200 rounded-lg p-4">
             <Text value={question.title || ""} />
             <Tabs
               styles="mt-2"
@@ -82,6 +84,22 @@ export const QuestionGenerator = memo(
           </div>
         );
       }
+      case Type.RADIO_BUTTONS:
+        return (
+          <div className="justify-start">
+            <Text value={question.title || ""} />
+            <div className="mt-2">
+              <RadioButtons inputs={question.values || [""]} />
+            </div>
+          </div>
+        );
+      case Type.CHECK_BOXES:
+        return (
+          <div className="justify-start">
+            <Text value={question.title || ""} />
+            <CheckBoxes inputs={question.values || [""]} />
+          </div>
+        );
       default: {
         return <div />;
       }

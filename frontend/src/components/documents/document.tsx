@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Text, View, StyleSheet } from "@react-pdf/renderer";
-import { convertTabValuesToInteger, getCurrentTime } from "utils";
+import { getCurrentTime } from "utils";
 import { Layout } from "components/documents/layout";
 import { Assessment } from "types/assessment";
 import { Question, Type } from "types/question";
@@ -53,6 +53,26 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    fontSize: 10,
+  },
+  tabBodyQuestion: {
+    width: "83%",
+  },
+  tabBodyAnswer: {
+    width: "15%",
+  },
+  buttonBodySection: {
+    margin: 5,
+    marginHorizontal: 10,
+    padding: 10,
+    border: "1px solid gray",
+    display: "flex",
+    flexDirection: "column",
+    fontSize: 10,
+  },
+  buttonBodyQuestion: {},
+  buttonBodyAnswer: {
+    marginTop: 5,
   },
 });
 
@@ -79,10 +99,7 @@ export function Document({
     <Layout>
       <View style={styles.section}>
         <Text style={styles.heading}>{assessment?.title}</Text>
-        <Text style={styles.heading}>
-          Completed on:
-          {getCurrentTime()}
-        </Text>
+        <Text style={styles.heading}>Completed on: {getCurrentTime()}</Text>
         {questions?.map((question, i) => {
           const value = valuesMap.get(i);
           switch (question.type) {
@@ -139,14 +156,29 @@ export function Document({
               );
             }
             case Type.TABS: {
+              const questionIndex = question?.values?.indexOf(value);
               return (
                 <View style={styles.tabBodySection} wrap={false}>
-                  <Text style={styles.body} wrap={false}>
+                  <Text style={styles.tabBodyQuestion} wrap={false}>
                     {question.title}
                   </Text>
-                  <Text style={styles.body} wrap={false}>
+                  <Text style={styles.tabBodyAnswer} wrap={false}>
                     {value || question?.values?.[0]} (
-                    {convertTabValuesToInteger(value)})
+                    {questionIndex === -1 ? 0 : questionIndex})
+                  </Text>
+                </View>
+              );
+            }
+            case Type.RADIO_BUTTONS: {
+              const questionIndex = question?.values?.indexOf(value);
+              return (
+                <View style={styles.buttonBodySection} wrap={false}>
+                  <Text style={styles.buttonBodyQuestion} wrap={false}>
+                    {question.title}
+                  </Text>
+                  <Text style={styles.buttonBodyAnswer} wrap={false}>
+                    {value || question?.values?.[0]} (
+                    {questionIndex === -1 ? 0 : questionIndex})
                   </Text>
                 </View>
               );

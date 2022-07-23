@@ -160,7 +160,7 @@
       "icon": "normal"
     },
     {
-      "title": "PTDSD Checklist - Civilian Version",
+      "title": "PTSD Checklist - Civilian Version",
       "orientation": "Patient Facing",
       "type": "Questionnaire",
       "categories": ["Pain"],
@@ -386,16 +386,6 @@
       "type": "",
       "categories": ["Pain", "Musculoskeletal"],
       "areas": ["Elbow"],
-      "topics": ["Quantify Pain"],
-      "subTopics": ["Sensorimotor Dysintegration"],
-      "tags": [""]
-    },
-    {
-      "title": "Shoulder Pain and Disability Index (SPADI)",
-      "orientation": "",
-      "type": "",
-      "categories": ["Pain", "Musculoskeletal"],
-      "areas": ["Neck", "Head"],
       "topics": ["Quantify Pain"],
       "subTopics": ["Sensorimotor Dysintegration"],
       "tags": [""]

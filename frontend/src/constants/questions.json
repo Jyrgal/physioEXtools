@@ -827,6 +827,357 @@
         "minimumText": "Not at all confident",
         "maximumText": "Completely confident"
       }
+    ],
+    "Patient Health Questionnaire - 9": [
+      {
+        "type": "text",
+        "title": "Please answer every question to the best of your ability unless you are requested to skip a question."
+      },
+      {
+        "type": "tabs",
+        "title": "1. Little interest or pleasure in doing things",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "2. Feeling down, depressed, or hopeless",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "3. Trouble falling or staying asleep, or sleeping too much",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "4. Feeling tired or having little energy",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "5. Poor appetite or overeating",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "6. Feeling bad about yourself, or that you are a failure, or have let yourself or your family down",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "7. Trouble concentrating on things, such as reading the newspaper or watching television",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "8. Moving or speaking so slowly that other people could have noticed. Or the opposite-being so fidgety or restless that you have been moving around a lot more than usual",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "9. Thoughts that you would be better off dead, or of hurting yourself in some way",
+        "values": [
+          "Not at all",
+          "Several days",
+          "More than half the days",
+          "Nearly every day"
+        ]
+      }
+    ],
+    "PTSD Checklist - Civilian Version": [
+      {
+        "type": "text",
+        "title": "Below is a list of problems and complaints that people sometimes have in response to traumatic events like getting injured. Please read each one carefully, and select the number to indicate how much you have been bothered by that problem in the past month."
+      },
+      {
+        "type": "tabs",
+        "title": "1. Repeated, disturbing memories, thoughts or images of the event",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "2. Repeated, disturbing dreams of the event",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "3. Suddenly activing or feeling as if the event were happening again (as if you were reliving it)",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "4. Feeling very upset when something reminded you of the event",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "5. Having physical reactions (e.g. heart pounding, trouble breathing, sweating) when something reminded you of the event",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "6. Avoiding thinking about or talking about the event or avoiding having feelings related to it",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "7. Avoiding activities or situations because they reminded you of the event",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "8. Trouble remembering important part of the event",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "9. Loss of interest in activities that you used to enjoy",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "10. Feeling distant or cut off from other people",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "11. Feeling emotionally numb or being unable to have loving feelings for those close to you",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "12. Feeling as if your future will somehow be cut short",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "13. Trouble falling or staying aslee",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "14. Feeling irritable or having angry outbursts",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "15. Having difficulty concentrating",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "16. Being ‘super-alert’, watchful or on guard",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      },
+      {
+        "type": "tabs",
+        "title": "17. Feeling jumpy or easily startled",
+        "values": [
+          "Not at all",
+          "A little bit",
+          "Moderately",
+          "Quite a bit",
+          "Extremely"
+        ]
+      }
+    ],
+    "S-LANSS": [
+      {
+        "type": "text",
+        "title": "Think about how the pain you have experienced as a result of your accident has felt over the last week. Please select the descriptions that best match your pain. These descriptions may, or may not, match your pain, no matter how severe it feels."
+      },
+      {
+        "type": "radio-buttons",
+        "title": "1. In the area where you have pain, do you also have ‘pin and needles’, tingling or prickling sensations?",
+        "values": [
+          "NO: I don’t get the sensation",
+          "YES: I do get these sensations"
+        ]
+      },
+      {
+        "type": "radio-buttons",
+        "title": "2. Does the painful area change colour (perhaps looks mottled or more red) when the pain is particularly bad?",
+        "values": [
+          "NO: The pain does not affect the colour of my skin",
+          "YES: I have noticed that the pain does make my skin different from normal"
+        ]
+      },
+      {
+        "type": "radio-buttons",
+        "title": "3. Does your pain make the affected skin abnormally sensitive to touch? Getting unpleasant sensations or pain when lightly stroking the skin might describe this.",
+        "values": [
+          "NO: The pain does not make my skin in that area abnormally sensitive to touch",
+          "YES: My skin in that area is particularly sensitive to touch"
+        ]
+      },
+      {
+        "type": "radio-buttons",
+        "title": "4. Does your pain come on suddenly and in bursts for no apparent reason when you are completely still? Words like ‘electric shocks’, jumping and bursting might describe this.",
+        "values": [
+          "NO: My pain doesn’t really feel like this",
+          "YES: I get these sensations often"
+        ]
+      },
+      {
+        "type": "radio-buttons",
+        "title": "5. In the area where you have pain, does your skin feel unusually hot like a burning pain?",
+        "values": [
+          "NO: I don’t have burning pain",
+          "YES: I get these sensations often"
+        ]
+      },
+      {
+        "type": "radio-buttons",
+        "title": "6. Gently rub the painful area with your index finger and then rub a non-painful area (for example the skin further away from the area, or on the opposite side). How does this rubbing feel in the painful area?",
+        "values": [
+          "The pain area feels no different from the nonpainful area",
+          "I feel discomfort, like pins and needles, tingling or burning in the painful area that is different from the non-painful area"
+        ]
+      },
+      {
+        "type": "radio-buttons",
+        "title": "7. Gently press on the painful area with your finger then gently press in the same way onto a nonpainful area like you did in the last question. How does this feel in the painful area?",
+        "values": [
+          "The pain area feels no different from the nonpainful area.",
+          "I feel numbness or tenderness in the painful area that is different from the non-painful area"
+        ]
+      }
     ]
   }
 }

@@ -5,8 +5,8 @@ export enum Type {
   TEXT_INPUT = "text-input",
   TEXT_INPUT_MULTIPLE = "text-input-multiple",
   TABS = "tabs",
-  SINGLE_SELECT = "single-select",
-  MULTI_SELECT = "multi-select",
+  RADIO_BUTTONS = "radio-buttons",
+  CHECK_BOXES = "check-boxes",
 }
 
 export interface IQuestion {
