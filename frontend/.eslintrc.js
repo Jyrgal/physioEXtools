@@ -12,7 +12,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
-    'prettier/prettier': 'error',
     '@typescript-eslint/indent': ['error', 2],
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
@@ -58,5 +57,7 @@ module.exports = {
     'max-classes-per-file': 'off',
     'no-unused-expressions': 'off',
     'jsx-a11y/label-has-for': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
   },
 };

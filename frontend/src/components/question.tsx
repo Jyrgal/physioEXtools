@@ -89,7 +89,10 @@ export const QuestionGenerator = memo(
           <div className="justify-start">
             <Text value={question.title || ""} />
             <div className="mt-2">
-              <RadioButtons inputs={question.values || [""]} />
+              <RadioButtons
+                values={question.values || [""]}
+                onClick={(value) => onClick(value)}
+              />
             </div>
           </div>
         );
