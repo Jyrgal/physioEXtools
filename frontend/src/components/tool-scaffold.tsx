@@ -8,6 +8,7 @@ import { Question } from "types/question";
 import { Assessment } from "types/assessment";
 import { QuestionGenerator } from "components/question";
 import { Document } from "components/documents/document";
+import { Summary } from "components/summary";
 
 export const ToolScaffold = memo(
   ({ assessment }: { assessment?: Assessment }) => {
@@ -58,6 +59,7 @@ export const ToolScaffold = memo(
             <Separator />
           </>
         ))}
+        <Summary assessment={assessment} values={values} />
         <Download
           download={`${assessment?.title || "assessment"}.pdf`}
           onClick={() => {

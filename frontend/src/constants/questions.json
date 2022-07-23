@@ -122,11 +122,7 @@
       },
       {
         "type": "text",
-        "title": "5. Select the result that best describes how, during the past 24 hours, pain has interfered with your life:",
-        "minimum": 0,
-        "maximum": 10,
-        "minimumText": "No symptoms at all",
-        "maximumText": "Many different symptoms"
+        "title": "5. Select the result that best describes how, during the past 24 hours, pain has interfered with your life:"
       },
       {
         "type": "range",

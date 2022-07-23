@@ -4,6 +4,7 @@ import { getCurrentTime } from "utils";
 import { Layout } from "components/documents/layout";
 import { Assessment } from "types/assessment";
 import { Question, Type } from "types/question";
+import { DocumentSummary } from "./summary";
 
 const styles = StyleSheet.create({
   page: {
@@ -188,6 +189,7 @@ export function Document({
             }
           }
         })}
+        <DocumentSummary assessment={assessment} values={values} />
       </View>
     </Layout>
   );
