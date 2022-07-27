@@ -14,8 +14,6 @@ export interface IQuestion {
   title?: string | null;
   minimum?: number | null;
   maximum?: number | null;
-  minimumText?: string | null;
-  maximumText?: string | null;
   number?: number | null;
   values?: string[] | null;
 }
@@ -28,10 +26,6 @@ export class Question implements IQuestion {
   public minimum?: number | null;
 
   public maximum?: number | null;
-
-  public minimumText?: string | null;
-
-  public maximumText?: string | null;
 
   public number?: number | null;
 

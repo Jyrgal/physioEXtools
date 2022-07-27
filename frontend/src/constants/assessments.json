@@ -38,17 +38,6 @@
       "icon": "normal"
     },
     {
-      "title": "Satisfaction and recovery",
-      "orientation": "Patient Facing",
-      "type": "Questionnaire",
-      "categories": ["Pain"],
-      "areas": [""],
-      "topics": ["Quantify Pain"],
-      "subTopics": [""],
-      "tags": [""],
-      "icon": "normal"
-    },
-    {
       "title": "WHiplash Clinical Prediction Tool",
       "orientation": "Patient Facing",
       "type": "Questionnaire",
@@ -579,6 +568,47 @@
       "topics": ["Neuro"],
       "subTopics": ["Sensorimotor Dysintegration"],
       "tags": [""]
+    },
+    {
+      "title": "Hospital Anxiety and Depression Scale (HADS)",
+      "orientation": "",
+      "type": "",
+      "categories": [""],
+      "areas": [],
+      "topics": [""],
+      "subTopics": [""],
+      "tags": [""]
+    },
+    {
+      "title": "Satisfaction and Recovery Index",
+      "description": [
+        "Below are 10 areas of life that other people in pain have identified as influencing recovery and satisfaction.",
+        "For each row, please indicate 1: how important that area is to you personally, and 2: how satisfied you currently feel in that area considering any interference from your injury or symptoms.",
+        "Note that it is possible to feel satisfied in an area that is not important to you, or to feel dissatisfied in an area that is important to you."
+      ],
+      "orientation": "Patient Facing",
+      "type": "Questionnaire",
+      "categories": ["Pain"],
+      "areas": [""],
+      "topics": ["Quantify Pain"],
+      "subTopics": [""],
+      "tags": [""],
+      "icon": "normal"
+    },
+    {
+      "title": "Fear-Avoidance Beliefs Questionnaire (FABQ)",
+      "description": [
+        "Here are some of the things which other patients have told us about their pain.",
+        "For each statement please select any number from 0 to 6 to say how much physical activities such as bending, lifting, walking or driving affect or would affect your back pain."
+      ],
+      "orientation": "Patient Facing",
+      "type": "Questionnaire",
+      "categories": ["Pain"],
+      "areas": [""],
+      "topics": ["Quantify Pain"],
+      "subTopics": [""],
+      "tags": [""],
+      "icon": "normal"
     }
   ]
 }

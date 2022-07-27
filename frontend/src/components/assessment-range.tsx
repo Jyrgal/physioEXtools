@@ -5,15 +5,13 @@ import { Range } from "components/range";
 export const AssessmentRange = memo(
   ({
     title,
-    minText,
-    maxText,
+    values,
     minValue = 0,
     maxValue = 10,
     onChange,
   }: {
     title: string;
-    minText: string;
-    maxText: string;
+    values?: string[];
     minValue?: number;
     maxValue?: number;
     onChange?: (value: number) => void;
@@ -33,13 +31,16 @@ export const AssessmentRange = memo(
             }}
           />
         </div>
-        <div className="mt-8 grid-cols-3 grid">
-          <Text styles="font-light" value={minText} />
+        <div className="mt-8 flex flex-row justify-between">
+          {values?.map((value) => (
+            <Text styles="font-light" value={value} />
+          ))}
+        </div>
+        <div className="flex justify-center items-center">
           <Text
             styles="font-medium justify-self-center"
             value={value?.toString()}
           />
-          <Text styles="font-light justify-self-end" value={maxText} />
         </div>
       </div>
     );

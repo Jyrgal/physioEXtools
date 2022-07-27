@@ -25,11 +25,10 @@ export const QuestionGenerator = memo(
         return (
           <AssessmentRange
             title={question.title || ""}
-            minText={question.minimumText || ""}
-            maxText={question.maximumText || ""}
             minValue={question.minimum || 0}
             maxValue={question.maximum || 10}
             onChange={(value) => onClick(value)}
+            values={question.values || [""]}
           />
         );
       }
