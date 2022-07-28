@@ -240,16 +240,6 @@
       "tags": [""]
     },
     {
-      "title": "Conditioned Pain Modulation",
-      "orientation": "Clinician Facing",
-      "type": "physical assessment",
-      "categories": ["Pain"],
-      "areas": ["Neck", "Head"],
-      "topics": ["Qualify Characteristics"],
-      "subTopics": ["Sensorimotor Dysintegration"],
-      "tags": [""]
-    },
-    {
       "title": "Pressure Pain Detection Threshold",
       "orientation": "Clinician Facing",
       "type": "physical assessment",
@@ -609,6 +599,35 @@
       "subTopics": [""],
       "tags": [""],
       "icon": "normal"
+    },
+    {
+      "title": "Pain Pressure Detection Threshold",
+      "description": [
+        "Note: This assessment is inntended for neck pain population.",
+        "Administer a pressure algometer to the local and unrelated sites."
+      ],
+      "orientation": "Patient Facing",
+      "type": "Questionnaire",
+      "categories": ["Pain"],
+      "areas": [""],
+      "topics": ["Quantify Pain"],
+      "subTopics": [""],
+      "tags": [""],
+      "icon": "normal"
+    },
+    {
+      "title": "Conditioned Pain Modulation Assessment",
+      "description": [
+        "This assessment consists of repeated PPDTs.",
+        "Administer a pressure algometer to the local site of pain for 30 seconds then readminister 60 seconnds later."
+      ],
+      "orientation": "Clinician Facing",
+      "type": "physical assessment",
+      "categories": ["Pain"],
+      "areas": ["Neck", "Head"],
+      "topics": ["Qualify Characteristics"],
+      "subTopics": ["Sensorimotor Dysintegration"],
+      "tags": [""]
     }
   ]
 }

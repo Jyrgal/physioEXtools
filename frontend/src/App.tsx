@@ -4,8 +4,9 @@ import { Navigation } from "navigation/navigation";
 import { AuthProvider } from "contexts/auth";
 import { NotificationsProvider } from "contexts/notifications";
 import { ModalsProvider } from "contexts/modals";
+import { memo } from "react";
 
-function App() {
+const App = memo(() => {
   return (
     <NotificationsProvider>
       <ModalsProvider>
@@ -17,6 +18,6 @@ function App() {
       </ModalsProvider>
     </NotificationsProvider>
   );
-}
+});
 
 export default App;

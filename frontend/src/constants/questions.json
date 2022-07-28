@@ -1651,6 +1651,43 @@
         "maximum": 6,
         "values": ["Completely disagree", "Unsure", "Completely agree"]
       }
+    ],
+    "Pain Pressure Detection Threshold": [
+      {
+        "type": "tabs",
+        "title": "Please select a gender:",
+        "values": ["Male", "Female"]
+      },
+      {
+        "type": "tabs",
+        "title": "Please select a unit:",
+        "values": ["Lbf", "Kgf", "N"]
+      },
+      {
+        "type": "text-input",
+        "title": "Enter upper fibres of trapezius score:"
+      },
+      {
+        "type": "text-input",
+        "title": "Enter tibialis anterior score:"
+      }
+    ],
+    "Conditioned Pain Modulation Assessment": [
+      {
+        "type": "tabs",
+        "title": "Please select a gender:",
+        "values": ["Male", "Female"]
+      },
+      {
+        "type": "tabs",
+        "title": "Please select a unit:",
+        "values": ["Lbf", "Kgf", "N"]
+      },
+      {
+        "type": "text-input-multiple",
+        "title": "Enter PPDT scores:",
+        "number": 2
+      }
     ]
   }
 }

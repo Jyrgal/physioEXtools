@@ -36,7 +36,7 @@ export const QuestionGenerator = memo(
         return (
           <>
             <Text styles="font-medium" value={question.title || ""} />
-            <div className="mt-6 w-2/3 self-center space-y-3">
+            <div className="mt-6 w-2/3 self-center flex items-center justify-center">
               <TextInput
                 styles="flex-1 border border-gray-300 rounded-md p-2"
                 onChange={(value) => {
