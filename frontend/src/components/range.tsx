@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 
 export const Range = memo(
   ({
@@ -6,14 +6,20 @@ export const Range = memo(
     max,
     step,
     onChange,
+    initialValue,
   }: {
     min: number;
     max: number;
     step: number;
     onChange?: (value: number) => void;
+    initialValue?: number;
   }) => {
     const length = (max - min) / step + 1;
     const labels = Array.from({ length }, (_, i) => min + i * step);
+    const [value, setValue] = useState(initialValue);
+    useEffect(() => {
+      setValue(initialValue);
+    }, [initialValue, setValue]);
 
     return (
       <div>
@@ -23,17 +29,18 @@ export const Range = memo(
           min={min}
           max={max}
           step={step}
-          defaultValue={min}
+          value={value}
           onChange={(e) => {
             e.preventDefault();
             // console.log(e.target.value);
             // onChange(parseInt(e.target.value));
+            setValue(parseInt(e.target.value));
             onChange && onChange(parseInt(e.target.value));
           }}
         />
         <ul className="flex justify-between w-full px-[10px]">
-          {labels.map((label) => (
-            <li className="flex justify-center relative">
+          {labels.map((label, index) => (
+            <li key={label + index} className="flex justify-center relative">
               <span className="absolute">{label}</span>
             </li>
           ))}

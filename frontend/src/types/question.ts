@@ -10,6 +10,7 @@ export enum Type {
 }
 
 export interface IQuestion {
+  id: string;
   type: Type;
   title?: string | null;
   minimum?: number | null;
@@ -19,6 +20,8 @@ export interface IQuestion {
 }
 
 export class Question implements IQuestion {
+  public id = "";
+
   public type: Type = Type.UNKNOWN;
 
   public title?: string | null;

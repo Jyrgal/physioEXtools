@@ -7,12 +7,12 @@ import {
   useContext,
   ReactNode,
   useCallback,
-  useState,
 } from "react";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
 interface Store {
-  toggleLogin: (open: boolean) => void;
-  toggleSignup: (open: boolean) => void;
+  toggleLogin: (replace?: boolean) => void;
+  toggleSignup: (replace?: boolean) => void;
 }
 
 const handleProviderNotSet = () => {
@@ -25,22 +25,23 @@ const ModalsContext = createContext<Store>({
 });
 
 export const ModalsProvider = memo(({ children }: { children: ReactNode }) => {
-  const [loginModalOpen, setLoginModalOpen] = useState(false);
-  const [signupModalOpen, setSignupModalOpen] = useState(false);
+  const location = useLocation();
+  const state = location.state as { backgroundLocation?: Location };
+  const navigate = useNavigate();
 
-  const toggleLogin = useCallback(
-    (open: boolean) => {
-      setLoginModalOpen(open);
-    },
-    [setLoginModalOpen]
-  );
+  const toggleLogin = useCallback((replace?: boolean) => {
+    navigate("login", {
+      replace,
+      state: { backgroundLocation: location },
+    });
+  }, []);
 
-  const toggleSignup = useCallback(
-    (open: boolean) => {
-      setSignupModalOpen(open);
-    },
-    [setSignupModalOpen]
-  );
+  const toggleSignup = useCallback((replace?: boolean) => {
+    navigate("signup", {
+      replace,
+      state: { backgroundLocation: location },
+    });
+  }, []);
 
   const data: Store = useMemo(
     () => ({ toggleLogin, toggleSignup }),
@@ -49,14 +50,26 @@ export const ModalsProvider = memo(({ children }: { children: ReactNode }) => {
 
   return (
     <ModalsContext.Provider value={data}>
-      <LoginModal
+      {/* <LoginModal
         open={loginModalOpen}
         onDismiss={() => setLoginModalOpen(false)}
-      />
-      <SignupModal
+      /> */}
+      {/* <SignupModal
         open={signupModalOpen}
         onDismiss={() => setSignupModalOpen(false)}
-      />
+      /> */}
+      {state?.backgroundLocation && (
+        <Routes>
+          <Route
+            path="login"
+            element={<LoginModal onDismiss={() => navigate(-1)} />}
+          />
+          <Route
+            path="signup"
+            element={<SignupModal onDismiss={() => navigate(-1)} />}
+          />
+        </Routes>
+      )}
       {children}
     </ModalsContext.Provider>
   );

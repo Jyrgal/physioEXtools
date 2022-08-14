@@ -73,3 +73,10 @@ export const getCurrentTime = () => {
     "en-AU"
   )}`;
 };
+
+export const parseURLNameToAssessmentTitle = (value: string) =>
+  value
+    .split("%20")
+    .map((val) => val.charAt(0).toUpperCase() + val.slice(1))
+    .join(" ")
+    .replace(/  +/g, " ");

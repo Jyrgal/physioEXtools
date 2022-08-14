@@ -34,8 +34,8 @@ export enum SubTopic {
 
 export enum Topic {
   UNKNOWN = "Unknown",
-  QUALIFY_CHARACTERISTICS = "Quantify Characteristics",
   QUANTIFY_PAIN = "Quantify Pain",
+  QUALIFY_PAIN_CHARACTERISTICS = "Qualify Pain Characteristics",
   RISK_ASSESSMENT = "Risk Assessment",
   NEURO = "Neuro",
 }
@@ -59,6 +59,7 @@ export enum Tag {
 }
 
 export interface IAssessment {
+  id?: string | null;
   title?: string | null;
   description?: string[] | null;
   orientation?: Orientation | null;
@@ -72,6 +73,8 @@ export interface IAssessment {
 }
 
 export class Assessment implements IAssessment {
+  public id?: string | null | undefined;
+
   public title?: string | null;
 
   public description?: string[] | null | undefined;

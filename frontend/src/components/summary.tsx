@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Assessment } from "types/assessment";
 import { Text } from "components/text";
 
@@ -8,51 +7,45 @@ export function Summary({
 }: {
   assessment?: Assessment;
   // eslint-disable-next-line
-  values: Map<number, any>;
+  values?: Map<string, any>;
 }) {
-  // eslint-disable-next-line
-  const [valuesMap, setValuesMap] = useState(new Map<number, any>());
-  useEffect(() => {
-    Object.entries(values).map(([key, value]) => {
-      const updatedMap = valuesMap.set(parseInt(key), value);
-      setValuesMap(updatedMap);
-      return [key, value];
-    });
-  }, [values]);
-  switch (assessment?.title) {
-    case "Brief Illness Perceptions Survey": {
+  switch (assessment?.id) {
+    case "BIPS": {
       const score: number =
-        (valuesMap.get(0) || 0) +
-        (valuesMap.get(1) || 0) +
-        (valuesMap.get(2) || 0) +
-        (valuesMap.get(3) || 0) +
-        (valuesMap.get(4) || 0) +
-        (valuesMap.get(5) || 0) +
-        (valuesMap.get(6) || 0) +
-        (valuesMap.get(7) || 0) +
-        (valuesMap.get(8) || 0) +
-        (valuesMap.get(9) || 0);
+        (values?.get("BIPS-1") || 0) +
+        (values?.get("BIPS-2") || 0) +
+        (values?.get("BIPS-3") || 0) +
+        (values?.get("BIPS-4") || 0) +
+        (values?.get("BIPS-5") || 0) +
+        (values?.get("BIPS-6") || 0) +
+        (values?.get("BIPS-7") || 0) +
+        (values?.get("BIPS-8") || 0) +
+        (values?.get("BIPS-9") || 0) +
+        (values?.get("BIPS-10") || 0);
       return <Text value={`Score: ${score}`} />;
     }
-    case "Brief Pain Inventory": {
-      const briefPainInventoryPainScore: number = (
-        (valuesMap.get(0) || 0) +
-        (valuesMap.get(1) || 0) +
-        (valuesMap.get(2) || 0) +
-        (valuesMap.get(3) || 0) / 4
+    case "BPI": {
+      const briefPainInventoryPainScore: string = (
+        ((values?.get("BPI-1") || 0) +
+          (values?.get("BPI-2") || 0) +
+          (values?.get("BPI-3") || 0) +
+          (values?.get("BPI-4") || 0)) /
+        4
       ).toFixed(2);
-      const briefPainInventoryPhysicalInterferenceScore: number = (
-        (valuesMap.get(5) || 0) +
-        (valuesMap.get(7) || 0) +
-        (valuesMap.get(8) || 0) / 3
+      const briefPainInventoryPhysicalInterferenceScore: string = (
+        ((values?.get("BPI-5") || 0) +
+          (values?.get("BPI-7") || 0) +
+          (values?.get("BPI-8") || 0)) /
+        3
       ).toFixed(2);
-      const briefPainInventoryAffectiveInterferenceScore: number = (
-        (valuesMap.get(6) || 0) +
-        (valuesMap.get(9) || 0) +
-        (valuesMap.get(11) || 0) / 3
+      const briefPainInventoryAffectiveInterferenceScore: string = (
+        ((values?.get("BPI-6") || 0) +
+          (values?.get("BPI-9") || 0) +
+          (values?.get("BPI-11") || 0)) /
+        3
       ).toFixed(2);
-      const briefPainInventorySleepInterferenceScore: number = (
-        valuesMap.get(10) || 0
+      const briefPainInventorySleepInterferenceScore: string = (
+        values?.get("BPI-10") || 0
       ).toFixed(2);
       return (
         <div className="flex flex-col">
@@ -70,11 +63,11 @@ export function Summary({
         </div>
       );
     }
-    case "P4 Instrument": {
-      const morningScore: number = valuesMap.get(0) || 0;
-      const afternoonScore: number = valuesMap.get(1) || 0;
-      const eveningScore: number = valuesMap.get(2) || 0;
-      const withActivityScore: number = valuesMap.get(3) || 0;
+    case "P4I": {
+      const morningScore: number = values?.get("P4I-1") || 0;
+      const afternoonScore: number = values?.get("P4I-2") || 0;
+      const eveningScore: number = values?.get("P4I-3") || 0;
+      const withActivityScore: number = values?.get("P4I-4") || 0;
       const averageScore: number =
         (morningScore + afternoonScore + eveningScore + withActivityScore) / 4;
       return (
@@ -88,18 +81,18 @@ export function Summary({
         </div>
       );
     }
-    case "DN4 Questionnaire": {
+    case "DN4Q": {
       const score: number =
-        (valuesMap.get(0) === "Yes" ? 1 : 0) +
-        (valuesMap.get(1) === "Yes" ? 1 : 0) +
-        (valuesMap.get(2) === "Yes" ? 1 : 0) +
-        (valuesMap.get(3) === "Yes" ? 1 : 0) +
-        (valuesMap.get(4) === "Yes" ? 1 : 0) +
-        (valuesMap.get(5) === "Yes" ? 1 : 0) +
-        (valuesMap.get(7) === "Yes" ? 1 : 0) +
-        (valuesMap.get(8) === "Yes" ? 1 : 0) +
-        (valuesMap.get(9) === "Yes" ? 1 : 0) +
-        (valuesMap.get(10) === "Yes" ? 1 : 0);
+        (values?.get("DN4Q-1") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-2") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-3") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-4") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-5") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-6") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-7") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-8") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-9") === "Yes" ? 1 : 0) +
+        (values?.get("DN4Q-10") === "Yes" ? 1 : 0);
       return (
         <div className="flex flex-col">
           <Text value="Results" />
@@ -112,6 +105,37 @@ export function Summary({
             }
           />
         </div>
+      );
+    }
+    case "SRI": {
+      const SRISumOfWeightedScores: number =
+        (values?.get("SRI-1a") || 0) * (values?.get("SRI-1b") || 0) +
+        (values?.get("SRI-2a") || 0) * (values?.get("SRI-2b") || 0) +
+        (values?.get("SRI-3a") || 0) * (values?.get("SRI-3b") || 0) +
+        (values?.get("SRI-4a") || 0) * (values?.get("SRI-4b") || 0) +
+        (values?.get("SRI-5a") || 0) * (values?.get("SRI-5b") || 0) +
+        (values?.get("SRI-6a") || 0) * (values?.get("SRI-6b") || 0) +
+        (values?.get("SRI-7a") || 0) * (values?.get("SRI-7b") || 0) +
+        (values?.get("SRI-8a") || 0) * (values?.get("SRI-8b") || 0) +
+        (values?.get("SRI-9a") || 0) * (values?.get("SRI-9b") || 0) +
+        (values?.get("SRI-10a") || 0) * (values?.get("SRI-10b") || 0);
+      const SRISumOfImportanceScores: number =
+        (values?.get("SRI-1a") || 0) +
+        (values?.get("SRI-2a") || 0) +
+        (values?.get("SRI-3a") || 0) +
+        (values?.get("SRI-4a") || 0) +
+        (values?.get("SRI-5a") || 0) +
+        (values?.get("SRI-6a") || 0) +
+        (values?.get("SRI-7a") || 0) +
+        (values?.get("SRI-8a") || 0) +
+        (values?.get("SRI-9a") || 0) +
+        (values?.get("SRI-10a") || 0);
+      const percentHealthRelatedSatisfaction =
+        (SRISumOfImportanceScores / SRISumOfWeightedScores) * 10;
+      return (
+        <Text
+          value={`Score: ${percentHealthRelatedSatisfaction.toFixed(2)} %`}
+        />
       );
     }
     default:

@@ -5,7 +5,7 @@ export const CheckBoxes = memo(({ inputs }: { inputs: string[] }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       {inputs.map((input, index) => (
-        <div className="form-check">
+        <div key={input + index} className="form-check">
           <input
             className="form-check-input h-4 w-4 border border-gray-500 rounded-sm mr-2 cursor-pointer"
             type="checkbox"

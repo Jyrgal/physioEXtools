@@ -1,27 +1,39 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 
 export const TextInput = memo(
   ({
     type = "text",
+    value,
     styles,
     placeholder,
-    onChange,
+    onBlur,
   }: {
     type?: string;
+    value?: string;
     styles?: string;
     placeholder?: string;
-    onChange?: (value: string) => void;
-  }) => (
-    <input
-      className={styles}
-      type={type}
-      onChange={(e) => {
-        e.preventDefault();
-        // console.log(e.target.value);
-        // onChange(parseInt(e.target.value));
-        onChange && onChange(e.target.value);
-      }}
-      placeholder={placeholder}
-    />
-  )
+    onBlur?: (value: string) => void;
+  }) => {
+    const [currValue, setCurrValue] = useState(value || "");
+    useEffect(() => {
+      setCurrValue(value || "");
+    }, [value]);
+    return (
+      <input
+        className={styles}
+        type={type}
+        onChange={(e) => {
+          e.preventDefault();
+          setCurrValue(e.target.value);
+        }}
+        onBlur={(e) => {
+          e.preventDefault();
+          onBlur && onBlur(e.target.value);
+          setCurrValue(e.target.value);
+        }}
+        placeholder={placeholder}
+        value={currValue}
+      />
+    );
+  }
 );

@@ -112,10 +112,7 @@ export const AssessmentProvider = memo(
           const convertedAssessment = new Assessment();
           Object.assign(convertedAssessment, assessment);
           setAssessmentsMap((assessmentsMap) =>
-            assessmentsMap.set(
-              assessment.title.toLowerCase(),
-              convertedAssessment
-            )
+            assessmentsMap.set(assessment.id, convertedAssessment)
           );
           return convertedAssessment;
         }
@@ -125,9 +122,9 @@ export const AssessmentProvider = memo(
     }, [setAssessments]);
 
     const getQuestions = useCallback(() => {
-      const assessmentTitles = Object.keys(questionsList.questions);
+      const assessmentIds = Object.keys(questionsList.questions);
       const assessmentQuestions = Object.values(questionsList.questions);
-      assessmentTitles.forEach((title, index) => {
+      assessmentIds.forEach((id, index) => {
         const questions: Question[] = assessmentQuestions[index].map(
           (question) => {
             const jsonParsedQuestion = new Question();
@@ -135,7 +132,7 @@ export const AssessmentProvider = memo(
             return jsonParsedQuestion;
           }
         );
-        setQuestionsMap((questionsMap) => questionsMap.set(title, questions));
+        setQuestionsMap((questionsMap) => questionsMap.set(id, questions));
       });
     }, []);
 

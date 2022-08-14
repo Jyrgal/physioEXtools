@@ -122,13 +122,19 @@ export const Header = memo(() => {
               value="Home"
               type="submit"
               styles="text-base font-medium text-gray-500 hover:text-gray-900"
-              onClick={() => navigate("..", { replace: true })}
+              onClick={() => navigate("..")}
             />
             <Button
               value="Tools"
               type="submit"
               styles="text-base font-medium text-gray-500 hover:text-gray-900"
-              onClick={() => navigate("../tools", { replace: true })}
+              onClick={() => navigate("../tools")}
+            />
+            <Button
+              value="Pain"
+              type="submit"
+              styles="text-base font-medium text-gray-500 hover:text-gray-900"
+              onClick={() => navigate("../pain")}
             />
             {/* <Popover className='relative'>
               {({ open }) => (
@@ -229,14 +235,15 @@ export const Header = memo(() => {
               onClick={async () => {
                 // const provider = new GoogleAuthProvider();
                 // const result = await signInWithPopup(auth, provider);
-                toggleLogin(true);
+                // toggleLogin(true);
+                toggleLogin(false);
               }}
             />
             <Button
               value="Sign up"
               type="submit"
               styles="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-700 hover:bg-blue-800"
-              onClick={() => toggleSignup(true)}
+              onClick={() => toggleSignup(false)}
             />
           </div>
         </div>
@@ -277,13 +284,19 @@ export const Header = memo(() => {
                 value="Home"
                 type="submit"
                 styles="flex-1 text-base font-medium text-gray-900 hover:text-gray-700"
-                onClick={() => navigate("..", { replace: true })}
+                onClick={() => navigate("..")}
               />
               <Button
                 value="Tools"
                 type="submit"
                 styles="flex-1 text-base font-medium text-gray-900 hover:text-gray-700"
-                onClick={() => navigate("../tools", { replace: true })}
+                onClick={() => navigate("../tools")}
+              />
+              <Button
+                value="Pain"
+                type="submit"
+                styles="flex-1 text-base font-medium text-gray-500 hover:text-gray-900"
+                onClick={() => navigate("../pain")}
               />
               <div>
                 {/* <a

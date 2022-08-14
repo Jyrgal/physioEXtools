@@ -26,7 +26,7 @@ Font.register({
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
-    backgroundColor: "#E4E4E4",
+    backgroundColor: "#FFFFFF",
     display: "flex",
     fontFamily: "Open Sans",
     padding: 40,

@@ -1,74 +1,57 @@
 import { Text } from "components/text";
 import { memo, useEffect, useState } from "react";
 import { Separator } from "components/separator";
-import { usePDF } from "@react-pdf/renderer";
-import { Download } from "components/download";
 import { useAssessment } from "contexts/assessment";
 import { Question } from "types/question";
 import { Assessment } from "types/assessment";
 import { QuestionGenerator } from "components/question";
-import { Document } from "components/documents/document";
-import { Summary } from "components/summary";
 
 export const ToolScaffold = memo(
-  ({ assessment }: { assessment?: Assessment }) => {
+  ({
+    assessment,
+    initialValues,
+    onSetValue,
+  }: {
+    assessment?: Assessment;
+    initialValues?: Map<string, string | string[] | number>;
+    onSetValue?: (value: Map<string, string | string[] | number>) => void;
+  }) => {
     const [values, setValues] = useState(
-      new Map<number, string | string[] | number>()
+      new Map<string, string | string[] | number>()
     );
-    const [loading, setLoading] = useState(false);
     const { questionsMap } = useAssessment();
-    let questions: Question[] | undefined;
-    if (assessment?.title) {
-      questions = questionsMap.get(assessment.title);
-    }
+    const questions: Question[] | undefined = questionsMap.get(
+      assessment?.id || ""
+    );
 
-    const [instance, updateInstance] = usePDF({
-      document: (
-        <Document
-          key={assessment?.title}
-          assessment={assessment}
-          questions={questions}
-          values={values}
-        />
-      ),
-    });
     useEffect(() => {
-      updateInstance();
-    }, [values, updateInstance]);
+      onSetValue && onSetValue(values);
+    }, [values]);
 
     return (
       <div className="flex flex-col">
         <span className="self-start text-2xl font-semibold whitespace-nowrap ">
           {assessment?.title}
         </span>
-        {/* <Button
-          value='questions'
-          onClick={() => {
-            console.log(values);
-          }}
-        /> */}
-        {assessment?.description?.map((d) => (
-          <Text value={d} />
-        ))}
-        {questions?.map((question, i) => (
-          <>
-            <QuestionGenerator
-              question={question}
-              onClick={(value) => setValues({ ...values, [i]: value })}
-            />
-            <Separator />
-          </>
-        ))}
-        <Summary assessment={assessment} values={values} />
-        <Download
-          download={`${assessment?.title || "assessment"}.pdf`}
-          onClick={() => {
-            setLoading(true);
-            setLoading(false);
-          }}
-          loading={loading}
-          url={instance.url || ""}
-        />
+        {assessment &&
+          assessment.description?.map((d, i) => <Text value={d} key={d + i} />)}
+        {questions &&
+          questions.map((question, index) => (
+            <div key={question && question.id + index}>
+              <QuestionGenerator
+                question={question}
+                onClick={(value) => {
+                  setValues((prevValue) => {
+                    const newValue = { ...prevValue, [question.id]: value };
+                    // onSetValue && onSetValue(newValue);
+                    return newValue;
+                  });
+                }}
+                value={initialValues?.get(question.id)}
+              />
+              <Separator />
+            </div>
+          ))}
       </div>
     );
   }

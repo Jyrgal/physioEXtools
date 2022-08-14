@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { Text, View, StyleSheet } from "@react-pdf/renderer";
 import { getCurrentTime } from "utils";
-import { Layout } from "components/documents/layout";
 import { Assessment } from "types/assessment";
 import { Question, Type } from "types/question";
 import { DocumentSummary } from "./summary";
@@ -9,7 +7,7 @@ import { DocumentSummary } from "./summary";
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
-    backgroundColor: "#E4E4E4",
+    backgroundColor: "#FFFFFF",
     display: "flex",
     fontFamily: "Open Sans",
   },
@@ -84,113 +82,126 @@ export function Document({
 }: {
   assessment?: Assessment;
   // eslint-disable-next-line
-  values: Map<number, any>;
+  values?: Map<string, any>;
   questions?: Question[];
 }) {
-  // eslint-disable-next-line
-  const [valuesMap, setValuesMap] = useState(new Map<number, any>());
-  useEffect(() => {
-    Object.entries(values).map(([key, value]) => {
-      const updatedMap = valuesMap.set(parseInt(key), value);
-      setValuesMap(updatedMap);
-      return [key, value];
-    });
-  }, [values, valuesMap]);
   return (
-    <Layout>
-      <View style={styles.section}>
-        <Text style={styles.heading}>{assessment?.title}</Text>
-        <Text style={styles.heading}>Completed on: {getCurrentTime()}</Text>
-        {questions?.map((question, i) => {
-          const value = valuesMap.get(i);
-          switch (question.type) {
-            case Type.TEXT: {
-              return (
-                <View style={styles.subheading} wrap={false}>
-                  <Text style={styles.body} wrap={false}>
-                    {question.title}
-                  </Text>
-                </View>
-              );
-            }
-            case Type.RANGE: {
-              return (
-                <View style={styles.bodySection} wrap={false}>
-                  <Text style={styles.body} wrap={false}>
-                    {question.title}
-                  </Text>
-                  <Text style={styles.body} wrap={false}>
-                    {value || 0}
-                    /10
-                  </Text>
-                </View>
-              );
-            }
-            case Type.TEXT_INPUT: {
-              return (
-                <View style={styles.bodySection} wrap={false}>
-                  <Text style={styles.body} wrap={false}>
-                    {question.title}
-                  </Text>
-                  <Text style={styles.body}>{value}</Text>
-                </View>
-              );
-            }
-            case Type.TEXT_INPUT_MULTIPLE: {
-              let arrayValues: string[];
-              if (!value) {
-                arrayValues = [];
-              } else {
-                arrayValues = value as string[];
-              }
-              return (
-                <View style={styles.bodySection} wrap={false}>
-                  <Text style={styles.body} wrap={false}>
-                    {question.title}
-                  </Text>
-                  {arrayValues.map((a, i) => (
-                    <Text style={styles.body}>
-                      {i + 1}.{a}
-                    </Text>
-                  ))}
-                </View>
-              );
-            }
-            case Type.TABS: {
-              const questionIndex = question?.values?.indexOf(value);
-              return (
-                <View style={styles.tabBodySection} wrap={false}>
-                  <Text style={styles.tabBodyQuestion} wrap={false}>
-                    {question.title}
-                  </Text>
-                  <Text style={styles.tabBodyAnswer} wrap={false}>
-                    {value || question?.values?.[0]} (
-                    {questionIndex === -1 ? 0 : questionIndex})
-                  </Text>
-                </View>
-              );
-            }
-            case Type.RADIO_BUTTONS: {
-              const questionIndex = question?.values?.indexOf(value);
-              return (
-                <View style={styles.buttonBodySection} wrap={false}>
-                  <Text style={styles.buttonBodyQuestion} wrap={false}>
-                    {question.title}
-                  </Text>
-                  <Text style={styles.buttonBodyAnswer} wrap={false}>
-                    {value || question?.values?.[0]} (
-                    {questionIndex === -1 ? 0 : questionIndex})
-                  </Text>
-                </View>
-              );
-            }
-            default: {
-              return <View />;
-            }
+    <View style={styles.section}>
+      <Text style={styles.heading}>{assessment?.title}</Text>
+      <Text style={styles.heading}>Completed on: {getCurrentTime()}</Text>
+      {questions?.map((question, index) => {
+        const value = values?.get(question.id || "");
+        switch (question.type) {
+          case Type.TEXT: {
+            return (
+              <View
+                key={question.id + index}
+                style={styles.subheading}
+                wrap={false}
+              >
+                <Text style={styles.body} wrap={false}>
+                  {question.title}
+                </Text>
+              </View>
+            );
           }
-        })}
-        <DocumentSummary assessment={assessment} values={values} />
-      </View>
-    </Layout>
+          case Type.RANGE: {
+            return (
+              <View
+                key={question.id + index}
+                style={styles.bodySection}
+                wrap={false}
+              >
+                <Text style={styles.body} wrap={false}>
+                  {question.title}
+                </Text>
+                <Text style={styles.body} wrap={false}>
+                  {value || 0}
+                  /10
+                </Text>
+              </View>
+            );
+          }
+          case Type.TEXT_INPUT: {
+            return (
+              <View
+                key={question.id + index}
+                style={styles.bodySection}
+                wrap={false}
+              >
+                <Text style={styles.body} wrap={false}>
+                  {question.title}
+                </Text>
+                <Text style={styles.body}>{value}</Text>
+              </View>
+            );
+          }
+          case Type.TEXT_INPUT_MULTIPLE: {
+            let arrayValues: string[];
+            if (!value) {
+              arrayValues = [];
+            } else {
+              arrayValues = value as string[];
+            }
+            return (
+              <View
+                key={question.id + index}
+                style={styles.bodySection}
+                wrap={false}
+              >
+                <Text style={styles.body} wrap={false}>
+                  {question.title}
+                </Text>
+                {arrayValues.map((a, i) => (
+                  <Text key={a + i} style={styles.body}>
+                    {i + 1}.{a}
+                  </Text>
+                ))}
+              </View>
+            );
+          }
+          case Type.TABS: {
+            const questionIndex = question?.values?.indexOf(value);
+            return (
+              <View
+                key={question.id + index}
+                style={styles.tabBodySection}
+                wrap={false}
+              >
+                <Text style={styles.tabBodyQuestion} wrap={false}>
+                  {question.title}
+                </Text>
+                <Text style={styles.tabBodyAnswer} wrap={false}>
+                  {value || question?.values?.[0]} (
+                  {questionIndex === -1 ? 0 : questionIndex})
+                </Text>
+              </View>
+            );
+          }
+          case Type.RADIO_BUTTONS: {
+            const questionIndex = question?.values?.indexOf(value);
+            return (
+              <View
+                key={question.id + index}
+                style={styles.buttonBodySection}
+                wrap={false}
+              >
+                <Text style={styles.buttonBodyQuestion} wrap={false}>
+                  {question.title}
+                </Text>
+                <Text style={styles.buttonBodyAnswer} wrap={false}>
+                  {value || question?.values?.[0]} (
+                  {questionIndex === -1 ? 0 : questionIndex})
+                </Text>
+              </View>
+            );
+          }
+          default: {
+            return <View key={question.id + index} />;
+          }
+        }
+      })}
+      <DocumentSummary assessment={assessment} values={values} />
+    </View>
   );
 }
