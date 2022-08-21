@@ -185,7 +185,7 @@
     },
     {
       "title": "Depression, Anxiety, Stress Score",
-      "id": "DASS-21",
+      "id": "DASS",
       "orientation": "Patient Facing",
       "type": "Questionnaire",
       "categories": ["Pain"],

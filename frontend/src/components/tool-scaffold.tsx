@@ -42,7 +42,10 @@ export const ToolScaffold = memo(
                 question={question}
                 onClick={(value) => {
                   setValues((prevValue) => {
-                    const newValue = { ...prevValue, [question.id]: value };
+                    const newValue = {
+                      ...prevValue,
+                      [question.id]: value,
+                    };
                     // onSetValue && onSetValue(newValue);
                     return newValue;
                   });

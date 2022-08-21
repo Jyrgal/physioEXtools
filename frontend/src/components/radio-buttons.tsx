@@ -33,7 +33,7 @@ export const RadioButtons = memo(
               type="radio"
               value={index}
               onClick={() => onButtonClick(index)}
-              onChange={() => console.log("change")}
+              onChange={() => console.log()}
               checked={checked === index}
             />
             <label

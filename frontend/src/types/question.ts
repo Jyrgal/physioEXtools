@@ -7,12 +7,15 @@ export enum Type {
   TABS = "tabs",
   RADIO_BUTTONS = "radio-buttons",
   CHECK_BOXES = "check-boxes",
+  COLOUR_RANGE = "colour-range",
+  SEPARATOR = "separator",
 }
 
 export interface IQuestion {
   id: string;
   type: Type;
   title?: string | null;
+  style?: string | null;
   minimum?: number | null;
   maximum?: number | null;
   number?: number | null;
@@ -23,6 +26,8 @@ export class Question implements IQuestion {
   public id = "";
 
   public type: Type = Type.UNKNOWN;
+
+  public style?: string | null;
 
   public title?: string | null;
 

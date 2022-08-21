@@ -6,6 +6,8 @@ import { memo, useRef } from "react";
 import { Tabs } from "components/tabs";
 import { RadioButtons } from "components/radio-buttons";
 import { CheckBoxes } from "components/check-boxes";
+import { ColourRange } from "components/colour-range";
+import { Separator } from "components/separator";
 
 export const QuestionGenerator = memo(
   ({
@@ -21,7 +23,24 @@ export const QuestionGenerator = memo(
     const inputs = useRef<string[]>(emptyArray.map(() => ""));
     switch (question.type) {
       case Type.TEXT: {
-        return <Text value={question.title || ""} styles="mt-10" />;
+        let styles = "";
+        switch (question.style) {
+          case "light":
+            styles = "font-light text-sm";
+            break;
+          case "bold":
+            styles = "font-bold";
+            break;
+          case "subheading":
+            styles = "text-xl font-medium";
+            break;
+          case "heading":
+            styles = "text-2xl font-semibold";
+            break;
+          default:
+            styles = "";
+        }
+        return <Text value={question.title || ""} styles={`mt-10 ${styles}`} />;
       }
       case Type.RANGE: {
         return (
@@ -86,11 +105,16 @@ export const QuestionGenerator = memo(
         const index = question.values?.indexOf(value as string);
         return (
           <div className="mt-5 flex flex-col lg:flex-row lg:space-x-4 h-auto justify-between items-center border-2 border-gray-200 rounded-lg p-4">
-            <Text styles="whitespace-pre-wrap" value={question.title || ""} />
+            <Text
+              styles="whitespace-pre-wrap max-w-md"
+              value={question.title || ""}
+            />
             <Tabs
-              styles="mt-2 max-w-md"
+              styles="mt-2 max-w-lg"
               values={question.values || [""]}
-              onClick={(value) => onClick(value)}
+              onClick={(value) =>
+                onClick(question.values?.indexOf(String(value)) || 0)
+              }
               defaultIndex={index}
             />
           </div>
@@ -104,7 +128,9 @@ export const QuestionGenerator = memo(
             <div className="mt-2">
               <RadioButtons
                 values={question.values || [""]}
-                onClick={(value) => onClick(value)}
+                onClick={(value) =>
+                  onClick(question.values?.indexOf(String(value)) || 0)
+                }
                 selected={index === -1 ? 0 : index}
               />
             </div>
@@ -118,6 +144,21 @@ export const QuestionGenerator = memo(
             <CheckBoxes inputs={question.values || [""]} />
           </div>
         );
+      }
+      case Type.COLOUR_RANGE: {
+        return (
+          <div className="justify-start">
+            <Text value={question.title || ""} />
+            <ColourRange
+              initialValue={Number(value) || 0}
+              onChange={(index) => onClick(index)}
+              values={question.values || [""]}
+            />
+          </div>
+        );
+      }
+      case Type.SEPARATOR: {
+        return <Separator />;
       }
       default: {
         return <div />;

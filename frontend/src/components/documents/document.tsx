@@ -196,6 +196,23 @@ export function Document({
               </View>
             );
           }
+          case Type.COLOUR_RANGE: {
+            return (
+              <View
+                key={question.id + index}
+                style={styles.bodySection}
+                wrap={false}
+              >
+                <Text style={styles.body} wrap={false}>
+                  {question.title}
+                </Text>
+                <Text style={styles.body} wrap={false}>
+                  {((question?.values?.length || 0) - 1 || 0) - value}.{" "}
+                  {question && question.values && question.values[value]}
+                </Text>
+              </View>
+            );
+          }
           default: {
             return <View key={question.id + index} />;
           }

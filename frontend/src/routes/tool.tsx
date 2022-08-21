@@ -53,6 +53,7 @@ export const Tool = memo(() => {
     const newSummaryMap = new Map(summaryMap.get(selectedAssessment?.id || ""));
     setSelectedSummaryMap(newSummaryMap);
     setSelectedQuestions(questionsMap.get(selectedAssessment?.id || ""));
+    console.log(selectedSummaryMap);
   }, [summaryMap]);
 
   const [instance, updateInstance] = usePDF({

@@ -22,7 +22,7 @@ export const Tools = memo(() => {
           <Dropdown
             label="Category"
             placeholder="Pain, musculoskeletal..."
-            values={enumToStringArray(Category)}
+            values={enumToStringArray(Category).splice(1)}
             onPress={(values) => setCategoryFilters(values)}
           />
         </div>
@@ -30,7 +30,7 @@ export const Tools = memo(() => {
           <Dropdown
             label="Subtopic"
             placeholder="Quantification..."
-            values={enumToStringArray(SubTopic)}
+            values={enumToStringArray(SubTopic).splice(1)}
             onPress={(values) => setSubtopicFilters(values)}
           />
         </div>

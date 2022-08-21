@@ -188,7 +188,7 @@
         "values": ["Does not interfere", "Completely interferes"]
       }
     ],
-    "Central Sensitivity Inventory": [
+    "CSI": [
       {
         "id": "CSI-1",
         "type": "tabs",
@@ -1979,6 +1979,36 @@
         "type": "tabs",
         "title": "10. Did a household member go to prison?",
         "values": ["No", "Yes"]
+      }
+    ],
+    "CH": [
+      {
+        "id": "CH-range",
+        "type": "colour-range",
+        "title": "Quantitative Sensory Testinng: Cold Hypersensitivity",
+        "values": [
+          "Extremely painful, intolerable",
+          "Intensely painful, nearly intolerable",
+          "Very painful, barely intolerable",
+          "Quite painful, very distressing",
+          "Painful, becoming distressing",
+          "Definitely painful, but tolerable",
+          "Mildly painful",
+          "Unpleasant, become annoying",
+          "Definitely unpleasant",
+          "Mildly unpleasant",
+          "Definitely cold, but still comfortable",
+          "Becoming cold",
+          "High end of cool, not quite cold",
+          "Higher intensity cool",
+          "Increasingly cool, comfortable",
+          "Definitely cool",
+          "Cool, but mild",
+          "Cool, but very mild",
+          "Faint coolness",
+          "Maybe cool, but barely noticeable",
+          "No temperature sensation"
+        ]
       }
     ]
   }
